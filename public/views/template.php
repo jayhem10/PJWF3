@@ -27,7 +27,7 @@
         <div class="collapse navbar-collapse" id="navbarMenu">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item ">
-              <a href="index.php?action=aboutUs" class="nav-link" >About Us</a>
+              <a href="<?= url('about') ?>" class="nav-link" >About Us</a>
             </li>
             <li class="nav-item">
               <a href="<?= url('viewHome') ?>" class="nav-link">Enter the Game</a>
@@ -44,8 +44,9 @@
                                 </li>
                             <?php else: ?>
                                 <li class="nav-item">
-                                <a class="btn btn-primary" href="<?= url('login') ?>" role="button">Login/SignIn</a>
-                                    <a class="nav-link" href="<?= url('signin') ?>">Sign In</a>
+                                <a class="btn btn-primary" href="<?= url('login') ?>" role="button">Login</a>
+                                <a class="btn btn-warning" href="<?= url('signin') ?>" role="button">Sign In</a>
+                                
 
                                 </li>
                             <?php endif; ?>

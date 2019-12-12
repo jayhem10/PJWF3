@@ -7,14 +7,13 @@ $router = new Router();
 $router->get('', 'PagesController@home');
 
 // example.com/a-propos
-$router->get('a-propos', 'PagesController@about');
+$router->get('about', 'PagesController@about');
 // example.com/contact
 $router->get('contact', 'PagesController@contact');
 
 // Inscription utilisateur
-$router->get('login', 'PagesController@signin');
-$router->post('login', 'PagesController@signin');
-
+$router->get('signin', 'PagesController@signin');
+$router->post('signin', 'PagesController@signin');
 
 // connexion utilisateur 
 $router->get('login', 'PagesController@login');
@@ -24,8 +23,7 @@ $router->post('login', 'PagesController@login');
 $router->get('logout', 'PagesController@logout');
 
 // page admin 
-$router->get('admin', 'AdminController@espace');
-
+$router->get('user', 'AdminController@addSport');
 
 // reception des données 
 $router->post('contact', 'PagesController@contact');

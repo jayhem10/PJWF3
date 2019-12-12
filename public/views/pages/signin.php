@@ -1,10 +1,12 @@
 <?php ob_start(); ?>
 
-<h1>Inscris toi !</h1>
-
+    <div class="container">
     <?= $errors; ?>
-    <!-- formulaire -->
-    <?= $formulaireHtml; ?>
+    <br><h4>Inscris toi !</h4>
+   <!-- formulaire -->
+   <?= $formulaireHtml1; ?>
+</div>
+ 
 
 
 <?php $content = ob_get_clean() ?> <?php view('template', compact('content')); ?>

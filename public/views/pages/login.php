@@ -1,16 +1,12 @@
 <?php ob_start(); ?>
-
-
+  
+   
+    <div class="container">
 
     <?= $errors; ?>
-    <!-- formulaire -->
 
-    <div class="container">
-    <h1>Connexion</h1>
-  <?= $formulaireHtml; ?>
-
-    <h1>Inscris-toi</h1>
-    <?= $formulaireHtml1; ?>
+    <br><h4>Accède à toutes les infos sur tes sportifs préférés</h4><br>
+    <?= $formulaireHtml2; ?>
 
 </div>
    

@@ -8,25 +8,10 @@
             }
         }
 
-        //fonction affiche quand l'utilisateur s'est connecté
-        public function espace() {
-            // appel a la BDD 
-            $jeuvideo = Jeuvideo::findAll();
 
-            $delete = ''; 
-
-            // j'affiche un message d'erreur si une suppression à été effectuée 
-            if ((isset($_SESSION['delete'])) && ($_SESSION['delete'] === true)) {
-                $delete =  alert('Le jeu video a bien été supprimé');
-                unset($_SESSION['delete']);
-            }
-
-            view('admin.alljeuvideo', compact('jeuvideo', 'delete'));
-        }
-
-        public function addJeuvideo() {
+        public function addSport() {
             
-            $genres = Genre::getAllSelect();
+            $genres = Sports::getAllSelect();
 
             $form = new Form($_POST);
 
@@ -66,7 +51,7 @@
                 }
             }
 
-            view('admin.addjeuvideo', compact('formulaireHtml', 'errors'));
+            view('admin.user', compact('formulaireHtml', 'errors'));
         }
 
 
