@@ -14,7 +14,10 @@ class PagesController {
 
     public function about() {
 
-        view('pages.about');
+        $var = findOne(2);
+
+
+        view('pages.about', compact('var'));
     }
 
     public function contact() {

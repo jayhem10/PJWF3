@@ -4,22 +4,19 @@
  * Nous allons utiliser des méthodes issues de Db, nous disons que Article
  * est une classe enfant, elle hérite de la classe Db 
  */
-class Sports extends Db {
+class User extends Db {
 
     /**
      * Proprietés 
      */
     protected $id;
-    protected $nom;
-    protected $slug;
-    protected $image;
 
     /**
      * Constantes
      * Nous pouvons aussi définir des constantes. Ici, il s'agit du nom de la table. Ainsi, s'il venait à changer, nous n'aurons plus qu'à le changer à cet endroit.
      */
-    const TABLE_NAME = "sport";
-    const PRIMARY_KEY = "id";
+    const TABLE_NAME = "user";
+    const PRIMARY_KEY = "usr_id";
 
     /**
      * Méthodes magiques
@@ -58,7 +55,6 @@ class Sports extends Db {
         return;
     }
 
-
     public static function findAll() {
 
         $bdd = Db::getDb();
@@ -72,23 +68,6 @@ class Sports extends Db {
         // je retourne la liste d'articles
         return $query->fetchAll(PDO::FETCH_ASSOC);       
     }
-
-    
-    public static function getAllSelect() {
-
-        $genres = self::findAll();
-
-        // je parcours les données de mon tableau pour récupere les informations dont j'ai besoin 
-        $genreSelect = [];
-        foreach ($genres as $value) {
-            // je mets le g_id en clé de mon tableau et le g_nom en valeur 
-            $genreSelect[$value['id']] = $value['nom_sport'];
-        }
-
-        // je retourne mon array de genres 
-        return $genreSelect;     
-    }
-
 
     public static function findOne(int $id) {
 
@@ -108,14 +87,13 @@ class Sports extends Db {
 
     }
 
-    public static function findSportByGenre(int $id) {
+    public static function find(int $id) {
 
         $bdd = Db::getDb();
 
         $query = $bdd->prepare('SELECT *
-                                FROM sport 
-                                INNER JOIN user ON sport.id = user.usr_id
-                                WHERE usr_id = :id');
+                            FROM sport
+                            WHERE s_id = :id');
 
         // je l'execute 
         $query->execute([
@@ -127,84 +105,66 @@ class Sports extends Db {
 
     }
     
+    public static function plateformeAvailable(int $id) {
 
-    /**
-     * Get propietés
-     */ 
-    public function getId()
-    {
-        return $this->id;
+        $bdd = Db::getDb();
+
+        $query = $bdd->prepare('SELECT * 
+                            FROM sport
+                            INNER JOIN user ON s_id = id_sport
+                            WHERE s_id = :id');
+
+        // je l'execute 
+        $query->execute([
+            'id' => $id
+        ]);
+
+        // je retourne la liste d'articles
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+
     }
 
-    /**
-     * Set propietés
-     *
-     * @return  self
-     */ 
-    public function setId($id)
-    {
-        $this->id = $id;
+    public static function connect($email, $password) {
 
-        return $this;
-    }
+        $bdd = Db::getDb();
+            
+            // je verifie si l'e-mail est présent en BDD 
+            $query = $bdd->prepare('SELECT * 
+                                    FROM user 
+                                    WHERE usr_email = ?');
+        
+            // j'execute ma requete 
+            $query->execute([
+                $email
+            ]);
+         
+            $user = $query->fetch(PDO::FETCH_ASSOC);
 
-    /**
-     * Get the value of nom
-     */ 
-    public function getNom()
-    {
-        return $this->nom;
-    }
-
-    /**
-     * Set the value of nom
-     *
-     * @return  self
-     */ 
-    public function setNom($nom)
-    {
-        $this->nom = $nom;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of slug
-     */ 
-    public function getSlug()
-    {
-        return $this->slug;
-    }
-
-    /**
-     * Set the value of slug
-     *
-     * @return  self
-     */ 
-    public function setSlug($slug)
-    {
-        $this->slug = $slug;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of image
-     */ 
-    public function getImage()
-    {
-        return $this->image;
-    }
-
-    /**
-     * Set the value of image
-     *
-     * @return  self
-     */ 
-    public function setImage($image)
-    {
-        $this->image = $image;
-
-        return $this;
-    }
+        
+            // si j'ai un utilisateur corresspondant à l'email 
+            if ($user) {
+        
+                // je vérifie si le MDP tapé correspond à la clé de hashage 
+                $verify = password_verify($password, $user['usr_password']);
+        
+                if ($verify) {
+                    // connecté
+                    unset($user['usr_password']);
+                    // je stock les infos user dans une variable de session 
+                    $_SESSION['user'] = $user;
+                    redirectTo('admin');    
+                    
+        
+                    // je retourne les infos utilisateur 
+                    return $user;
+            
+                }
+                else {
+                    // je retourne false si le password est incorect 
+                    $errors = false;
+                }
+            }
+        
+        }
+ 
 } 
