@@ -74,7 +74,7 @@ class PagesController {
             $formValid = true;
 
             // connexion de l'utilisateur 
-            $user = user::connect( $_POST['email'], $_POST['password'] );
+            $user = User::connect( $_POST['email'], $_POST['password'] );
             
             if ($user) {
                 // user connecté 
