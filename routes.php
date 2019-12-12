@@ -10,6 +10,23 @@ $router->get('', 'PagesController@home');
 $router->get('a-propos', 'PagesController@about');
 // example.com/contact
 $router->get('contact', 'PagesController@contact');
+
+// Inscription utilisateur
+$router->get('login', 'PagesController@signin');
+$router->post('login', 'PagesController@signin');
+
+
+// connexion utilisateur 
+$router->get('login', 'PagesController@login');
+$router->post('login', 'PagesController@login');
+
+// déconnexion utilisateur 
+$router->get('logout', 'PagesController@logout');
+
+// page admin 
+$router->get('admin', 'AdminController@espace');
+
+
 // reception des données 
 $router->post('contact', 'PagesController@contact');
 

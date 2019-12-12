@@ -3,7 +3,7 @@
 <?php ob_start(); ?>
 
 <div class="hover">
-    <img src="img/index2.jpg" style="height:100vh width:100%" class="img-fluid" alt="Responsive image"><h2 class="titreindex">ENTER THE GAME</h2>
+    <img src="public/img/index2.jpg" style="height:100vh width:100%" class="img-fluid" alt="Responsive image"><h2 class="titreindex">ENTER THE GAME</h2>
 </div>
 
 
@@ -23,21 +23,21 @@
       </ol>
       <div class="carousel-inner" role="listbox">
         <div class="carousel-item active">
-          <img src="img/LBJ_1.jpg" class="d-block w-100" alt="First Slide">
+          <img src="public/img/LBJ_1.jpg" class="d-block w-100" alt="First Slide">
           <div class="carousel-caption">
             <h5 class="text-light">LEBRON JAMES</h5>
             <p></p>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="img/CR7_0.jpg" class="d-block w-100" alt="Second Slide">
+          <img src="public/img/CR7_0.jpg" class="d-block w-100" alt="Second Slide">
           <div class="carousel-caption">
             <h5 class="text-primary">CRISTIANO RONALDO</h5>
             <p></p>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="img/SRW_1.jpg" class="d-block w-100" alt="Third Slide">
+          <img src="public/img/SRW_1.jpg" class="d-block w-100" alt="Third Slide">
           <div class="carousel-caption">
             <h5 class="text-warning">SERENA WILLIAMS</h5>
             <p></p>
@@ -61,6 +61,4 @@
 <a class="btn btn-warning btn-lg my-5" href="#" role="button">M'inscrire</a>
 </div>
 
-<?php $contenu = ob_get_clean(); ?>
-
-<?php require 'template.php'; ?>
+<?php $content = ob_get_clean() ?> <?php view('template', compact('content')); ?>

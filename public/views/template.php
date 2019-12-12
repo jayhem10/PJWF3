@@ -12,14 +12,13 @@
 
     <link href="https://fonts.googleapis.com/css?family=Heebo|Mansalva|Questrial&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="styles/style.css">
-    
+     <link href="<?= css_url('style.css'); ?>" rel="stylesheet">
 
 
 <header>
   <body>
       <nav class="navbar navbar-expand-sm bg-light navbar-light">
-        <a href="index.php?action=accueilAction" class="navbar-brand">Be The Next</a>
+        <a href="<?= url('') ?>" class="navbar-brand">Be The Next</a>
 
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
           <span class="navbar-toggler-icon"></span>
@@ -31,7 +30,7 @@
               <a href="index.php?action=aboutUs" class="nav-link" >About Us</a>
             </li>
             <li class="nav-item">
-              <a href="index.php?action=EnterTheGame" class="nav-link">Enter the Game</a>
+              <a href="<?= url('viewHome') ?>" class="nav-link">Enter the Game</a>
             </li>
             <li class="nav-item">
               <a href="index.php?action=Eshop" class="nav-link">E-Shop</a>
@@ -45,7 +44,9 @@
                                 </li>
                             <?php else: ?>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="<?= url('login') ?>">Login</a>
+                                <a class="btn btn-primary" href="<?= url('login') ?>" role="button">Login/SignIn</a>
+                                    <a class="nav-link" href="<?= url('signin') ?>">Sign In</a>
+
                                 </li>
                             <?php endif; ?>
             
@@ -57,7 +58,7 @@
 
         <?php
             // contenu de la page
-            echo $contenu; 
+            echo $content; 
         ?>
 
 
@@ -165,7 +166,7 @@
 
 </footer>
       <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-      <script src="public/scripts.js"></script>
+      <script src="<?= js_url('script.js'); ?>"></script>
 
       <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 
