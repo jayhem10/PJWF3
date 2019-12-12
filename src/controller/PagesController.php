@@ -59,8 +59,8 @@ class PagesController {
 
         $form = new Form($_POST);
 
-        $form->input("select", 'civilite', 'Civilité', [1=>'M', 2=>'Mme', 3=>'Mlle'])->required()
-            ->input('text', "nom", "Nom")->required()
+        
+        $form->input('text', "nom", "Nom")->required()
             ->input('text', "prenom", "Prénom")->required()
             ->input('text', "email", "E-mail")->required()
             ->input('password', 'password', 'Mot de passe')->required()
