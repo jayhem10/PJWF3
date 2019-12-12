@@ -1,6 +1,6 @@
 <?php ob_start(); ?>
 
-<h1>Connexion</h1>
+<h1>Inscris toi !</h1>
 
     <?= $errors; ?>
     <!-- formulaire -->
