@@ -6,6 +6,10 @@
     A propos
 </p>
 
+<?php 
+echo '<pre>';
+var_dump($var); ?>
+
 
 <?php $content = ob_get_clean() ?> 
 <?php view('template', compact('content')); ?>
