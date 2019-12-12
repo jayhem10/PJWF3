@@ -36,7 +36,19 @@
             <li class="nav-item">
               <a href="index.php?action=Eshop" class="nav-link">E-Shop</a>
             </li>
-               <button class="btn btn-dark navbar-btn">Connect</button>
+            <?php if (isset($_SESSION['USER'])): ?>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="<?= url('admin') ?>">Admin</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="<?= url('logout') ?>">Logout</a>
+                                </li>
+                            <?php else: ?>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="<?= url('login') ?>">Login</a>
+                                </li>
+                            <?php endif; ?>
+            
           </ul>
         </div>
       </nav>

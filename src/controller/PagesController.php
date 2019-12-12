@@ -50,6 +50,62 @@ class PagesController {
         // vue de la page contact 
         view('pages.contact', compact('formulaireHtml', 'errors', 'formValid'));
     }
+
+    //FONCTOIN LOGIN
+
+    public function login() {
+
+        $form = new Form($_POST);
+
+        $form->input('text', 'email', 'E-mail')->required()->is_email()
+            ->input('password', 'password', 'Mot de passe')->required()
+            ->submit('enregistrer');
+
+        $formulaireHtml = $form->getForm();
+
+        $formValid  = false;
+        $errors     = false; 
+
+        // si le formulaire est validé 
+        if($form->valid()){
+
+            // formulaire valide
+            $formValid = true;
+
+            // connexion de l'utilisateur 
+            $user = User::connect( $_POST['email'], $_POST['password'] );
+            
+            if ($user) {
+                // user connecté 
+                redirectTo('admin');
+            }else {
+                $errors = alert('Identifiants incorrects');
+            }
+
+        } else {
+            // affichage des erreurs 
+            $errors =  $form->displayErrors();
+        }
+
+        view('pages.user', compact('formulaireHtml', 'formValid', 'errors'));
+    }
+
+        //FONCTION LOGOUT
+        
+    public function logout() {
+
+        // destruction de la session utilisateur 
+        User::logout();
+        // session_destroy();
+
+        redirectTo('login');
+    
+
+        // vue de la page login 
+        view('pages.login', compact('formulaireHtml', 'formValid', 'errors'));
+   
+    }
+
     
     public function page404() {
 
