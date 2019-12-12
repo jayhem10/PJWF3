@@ -3,8 +3,8 @@
 
         public function __construct() {
             // redirection de l'utilisateur s'il n'est pas connecté
-            if (!User::isConnect()){
-                redirectTo('user');
+            //if (!user::isConnect()){
+            //    redirectTo('user');
             //}
         }
 

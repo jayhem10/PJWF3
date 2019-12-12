@@ -75,7 +75,7 @@ class PagesController {
             $formValid = true;
 
             // connexion de l'utilisateur 
-            $user = User::connect( $_POST['email'], $_POST['password'] );
+            $user = user::connect( $_POST['email'], $_POST['password'] );
             
             if ($user) {
                 // user connecté 
@@ -127,7 +127,7 @@ class PagesController {
             
                 // Enregistrement des données
                 // insertion des données via le model Userbase 
-                $id = User::signin([
+                $id = user::signin([
                     "usr_nom"     => $_POST['nom'],
                     //"usr_slug"    => slugify($_POST['nom']),
                     "usr_prenom"   => $_POST['prenom'],
