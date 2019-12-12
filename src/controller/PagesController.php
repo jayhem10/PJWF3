@@ -24,8 +24,7 @@ class PagesController {
 
         $form = new Form($_POST);
 
-        $form->input("select", 'civilite', 'Civilité', [1=>'M', 2=>'Mme', 3=>'Mlle'])->required()
-            ->input('text', "nom", "Nom")->required()
+        $form->input('text', "nom", "Nom")->required()
             ->input('text', "prenom", "Prénom")->required()
             ->input('text', "email", "E-mail")->required()
             ->input('textarea', "message", "Message")->required()
@@ -103,13 +102,13 @@ class PagesController {
             
         $form = new Form($_POST);
 
-        $form->input("select", 'civilite', 'Civilité', [1=>'M', 2=>'Mme', 3=>'Mlle'])->required()
-            ->input('text', "nom", "Nom")->required()
+        $form->input('text', "nom", "Nom")->required()
             ->input('text', "prenom", "Prénom")->required()
             ->input('text', "email", "E-mail")->required()
             ->input('password', 'password', 'Mot de passe')->required()
+            ->input('password', 'password2', 'Confirmer mot de passe')->required()
             ->input('select', "sport", "Choisis ton sport favori", $sport )->required()
-           // ->input('password', 'password2', 'Confirmer mot de passe')->required()
+          
             ->submit('Inscris-toi');
 
         $formulaireHtml1 = $form->getForm();
@@ -138,7 +137,7 @@ class PagesController {
 
                 // redirection apres ajout en BDD 
                 //redirectTo('user/'.$id.'/'.slugify($_POST['nom']));
-                redirectTo('admin');
+                redirectTo('user');
 
             } else {
                 // affichage des erreurs 
