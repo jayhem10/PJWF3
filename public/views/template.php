@@ -99,7 +99,7 @@
           </li>
           <li>
             <p>
-              <a href="#!">About Us</a>
+              <a href="<?= url('about') ?>">About Us</a>
             </p>
           </li>
           <li>

@@ -4,8 +4,8 @@
         public function __construct() {
             // redirection de l'utilisateur s'il n'est pas connecté
             if (!User::isConnect()){
-                redirectTo('login');
-            }
+                redirectTo('user');
+            //}
         }
 
 
@@ -120,3 +120,4 @@
         }
 
     }
+

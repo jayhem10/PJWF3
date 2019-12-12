@@ -4,7 +4,7 @@
  * Nous allons utiliser des méthodes issues de Db, nous disons que Article
  * est une classe enfant, elle hérite de la classe Db 
  */
-class Jeuvideo extends Db {
+class Sports extends Db {
 
     /**
      * Proprietés 
@@ -18,8 +18,8 @@ class Jeuvideo extends Db {
      * Constantes
      * Nous pouvons aussi définir des constantes. Ici, il s'agit du nom de la table. Ainsi, s'il venait à changer, nous n'aurons plus qu'à le changer à cet endroit.
      */
-    const TABLE_NAME = "jeuvideo";
-    const PRIMARY_KEY = "jv_id";
+    const TABLE_NAME = "sport";
+    const PRIMARY_KEY = "id";
 
     /**
      * Méthodes magiques
@@ -47,11 +47,11 @@ class Jeuvideo extends Db {
 
     public static function update($data, $id) {
 
-        $id = Db::dbUpdate(self::TABLE_NAME, 
+        Db::dbUpdate(self::TABLE_NAME, 
                         $data, 
                         [self::PRIMARY_KEY => $id]);
 
-        return $id;
+        return;
     }
 
     public static function delete($id) {
@@ -60,6 +60,7 @@ class Jeuvideo extends Db {
         
         return;
     }
+
 
     public static function findAll() {
 
@@ -75,50 +76,49 @@ class Jeuvideo extends Db {
         return $query->fetchAll(PDO::FETCH_ASSOC);       
     }
 
+    
+    public static function getAllSelect() {
+
+        $genres = self::findAll();
+
+        // je parcours les données de mon tableau pour récupere les informations dont j'ai besoin 
+        $genreSelect = [];
+        foreach ($genres as $value) {
+            // je mets le g_id en clé de mon tableau et le g_nom en valeur 
+            $genreSelect[$value['id']] = $value['nom_sport'];
+        }
+
+        // je retourne mon array de genres 
+        return $genreSelect;     
+    }
+
+
     public static function findOne(int $id) {
 
         $bdd = Db::getDb();
 
         $query = $bdd->prepare('SELECT *
                             FROM '. self::TABLE_NAME .' 
-                            INNER JOIN genre ON jeuvideo.genre_id = genre.g_id
-                            WHERE '.self::PRIMARY_KEY.' = :idJV');
+                            WHERE '.self::PRIMARY_KEY.' = :id');
 
         // je l'execute 
         $query->execute([
-            'idJV' => $id
+            'id' => $id
         ]);
 
         // je retourne la liste d'articles
         return $query->fetch(PDO::FETCH_ASSOC);
+
     }
 
-    public static function findMedias(int $id) {
+    public static function findSportByGenre(int $id) {
 
         $bdd = Db::getDb();
 
         $query = $bdd->prepare('SELECT *
-                            FROM jeuvideo_media 
-                            WHERE jeuvideo_id = :jvid');
-
-        // je l'execute 
-        $query->execute([
-            'jvid' => $id
-        ]);
-
-        // je retourne la liste d'articles
-        return $query->fetchAll(PDO::FETCH_ASSOC);
-
-    }
-    
-    public static function plateformeAvailable(int $id) {
-
-        $bdd = Db::getDb();
-
-        $query = $bdd->prepare('SELECT * 
-                            FROM plateforme
-                            INNER JOIN jeuvideo_plateforme ON jeuvideo_plateforme.plateforme_id = plateforme.p_id
-                            WHERE jeuvideo_id = :id');
+                                FROM sport 
+                                INNER JOIN user ON sport.id = user.usr_id
+                                WHERE usr_id = :id');
 
         // je l'execute 
         $query->execute([
@@ -129,30 +129,8 @@ class Jeuvideo extends Db {
         return $query->fetchAll(PDO::FETCH_ASSOC);
 
     }
-
-    public static function sameAs($id, $genre_id) {
-
-        $bdd = Db::getDb();
-
-        $query = $bdd->prepare('SELECT *
-                            FROM '. self::TABLE_NAME .'
-                            WHERE jv_id != :id
-                            AND genre_id = :genre
-                            ORDER BY RAND()
-                            LIMIT 0, 2');
-
-        // je l'execute 
-        $query->execute([
-            'id' => $id, 
-            'genre' => $genre_id
-        ]);
-
-        // je retourne la liste d'articles
-        return $query->fetchAll(PDO::FETCH_ASSOC);       
-    }
     
 
-    
     /**
      * Get propietés
      */ 

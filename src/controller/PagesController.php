@@ -76,9 +76,12 @@ class PagesController {
             
             if ($user) {
                 // user connecté 
-                redirectTo('admin');
+                redirectTo('user');
             }else {
-                $errors = alert('Identifiants incorrects');
+                
+                echo 'Incorrect';
+                
+                //$errors = alert('Identifiants incorrects');
             }
 
         } else {
@@ -92,6 +95,8 @@ class PagesController {
     //FONCTION INSCRIRE SUR LE SITE
 
     public function signin() {
+
+        $sport = Sports::getAllSelect();
             
         $form = new Form($_POST);
 
@@ -100,6 +105,7 @@ class PagesController {
             ->input('text', "prenom", "Prénom")->required()
             ->input('text', "email", "E-mail")->required()
             ->input('password', 'password', 'Mot de passe')->required()
+            ->input('select', "sport", "Choisis ton sport favori", $sport )->required()
            // ->input('password', 'password2', 'Confirmer mot de passe')->required()
             ->submit('Inscris-toi');
 
@@ -123,7 +129,8 @@ class PagesController {
                     //"usr_slug"    => slugify($_POST['nom']),
                     "usr_prenom"   => $_POST['prenom'],
                     "usr_email"   => $_POST['email'],
-                    "usr_password"   => $_POST['password']
+                    "usr_password"   => $_POST['password'],
+                    "nom_sport"   => $_POST['sport']
                 ]);
 
                 // redirection apres ajout en BDD 
