@@ -1,8 +1,11 @@
 <?php ob_start(); ?>
 
-<img src="<?= $player['img_sport']; ?>" alt="">
-<h4>Bienvenue dans ton arène <b><?= $_POST['usr_prenom']?></b>!</h4>
-</div>
+<?php foreach ($user as $player): ?>
+<h4>Bienvenue dans ton arène <b><?= $player['usr_prenom']; ?></b>!</h4>
+
+
+<div class="container">
+    <h5>Tes sportifs préférés sont ici :</h5>
 
 
 

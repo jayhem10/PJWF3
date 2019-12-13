@@ -7,7 +7,7 @@ $router = new Router();
 $router->get('', 'PagesController@home');
 
 // example.com/a-propos
-//$router->get('aboutus', 'PagesController@aboutus');
+$router->get('aboutus', 'PagesController@about');
 
 // example.com/contact
 $router->get('contact', 'PagesController@contact');
