@@ -107,6 +107,40 @@ class User extends Db {
         return $query->fetchAll(PDO::FETCH_ASSOC);
 
     }
+
+        // ENVOI LES INFOS DE LA TABLE SPORT EN FONCTION DE L'ID User
+        public static function nomSport() {
+
+            $bdd = Db::getDb();
+    
+            $query = $bdd->prepare('SELECT *
+                                FROM sport');
+    
+            // je l'execute 
+            $query->execute();
+    
+            // je retourne la liste d'articles
+            $sport = $query->fetchAll(PDO::FETCH_ASSOC);
+
+            return $sport;
+    
+        }
+
+        public static function getAllSelect() {
+
+            $genres = self::nomSport();
+    
+            $genreSelect = [];
+    
+            foreach ($genres as $value) {
+    
+                $genreSelect[$value['s_id']] = $value['nom_sport'];
+                
+            }
+    
+            // je retourne la liste d'articles
+            return $genreSelect;     
+        }
     
     // ENVOI L'UTILISATEUR PAR ID ET LA TABLE SPORT EN RELATION
     public static function findUserSport(int $id) {
@@ -173,53 +207,14 @@ class User extends Db {
         
         }
 
-        public function signin() {
-            
-            //$nom = User::signin();
+        public static function signin($data) {
+
+            $nouvelId = Db::dbCreate(self::TABLE_NAME, $data);
     
-            $form = new Form($_POST);
-    
-            $form->input("select", 'civilite', 'Civilité', [1=>'M', 2=>'Mme', 3=>'Mlle'])->required()
-                ->input('text', "nom", "Nom")->required()
-                ->input('text', "prenom", "Prénom")->required()
-                ->input('text', "email", "E-mail")->required()
-                ->input('password', 'password', 'Mot de passe')->required()
-                ->input('password', 'password2', 'Confirmer mot de passe')->required()
-                ->submit('S\'inscrire');
-    
-            $formulaireHtml = $form->getForm();
-    
-            $formValid  = false;
-            $errors     = false; 
-    
-            // si le formulaire est validé 
-            if (!empty($_POST)) {
-                
-                if($form->valid()){
-    
-                    // formulaire valide
-                    $formValid = true;
-                
-                    // Enregistrement des données
-                    // insertion des données via le model Userbase 
-                    $id = User::signin([
-                        "usr_nom"     => $_POST['nom'],
-                        "usr_slug"    => slugify($_POST['nom']),
-                        "usr_prenom"   => $_POST['prenom'],
-                        "usr_email"   => $_POST['email']
-                    ]);
-    
-                    // redirection apres ajout en BDD 
-                    redirectTo('user/'.$id.'/'.slugify($_POST['nom']));
-    
-                } else {
-                    // affichage des erreurs 
-                    $errors =  $form->displayErrors();
-                }
-            }
-    
-            view('pages.signin', compact('formulaireHtml', 'errors', 'formValid'));
+            return $nouvelId;
         }
+
+
 
         
  

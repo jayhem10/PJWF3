@@ -16,15 +16,15 @@ class PagesController {
 
         // Exemple pour appeler mon objet User et une requête SQL
 
-        $players = User::findUserSport(3);
+        $players = User::findUserSport();
 
 
         view('pages.aboutus', compact('players'));
     }
 
-    public function user() {
+    public function user($id,$slug) {
 
-        $user = User::findUserSport(2);
+        $user = User::findOne($id);
 
 
         view('pages.user', compact('user'));
@@ -109,17 +109,18 @@ class PagesController {
 
     public function signin() {
 
-        $sport = User::signin();
+        
+        $sport = User::getAllSelect();
             
         $form = new Form($_POST);
 
         
         $form->input('text', "prenom", "Prénom")->required()
+        ->input('text', "nom", "Nom")->required()
             ->input('text', "email", "E-mail")->required()
             ->input('password', 'password', 'Mot de passe')->required()
             ->input('password', 'password2', 'Confirmer mot de passe')->required()
             ->input('select', "sport", "Choisis ton sport favori", $sport )->required()
-          
             ->submit('Inscris-toi');
 
         $formulaireHtml = $form->getForm();
@@ -137,18 +138,18 @@ class PagesController {
             
                 // Enregistrement des données
                 // insertion des données via le model Userbase 
-                $id = user::signin([
+                $id = User::signin([
                     "usr_nom"     => $_POST['nom'],
                     //"usr_slug"    => slugify($_POST['nom']),
                     "usr_prenom"   => $_POST['prenom'],
                     "usr_email"   => $_POST['email'],
-                    "usr_password"   => $_POST['password'],
+                    "usr_password"   => password_hash( $_POST['password'], PASSWORD_DEFAULT),
                     "id_sport"   => $_POST['sport']
                 ]);
 
                 // redirection apres ajout en BDD 
-                //redirectTo('user/'.$id.'/'.slugify($_POST['nom']));
-                redirectTo('user');
+                redirectTo('user/'.$id.'/'.slugify($_POST['nom']));
+                
 
             } else {
                 // affichage des erreurs 
