@@ -27,7 +27,7 @@
         <div class="collapse navbar-collapse" id="navbarMenu">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item ">
-              <a href="<?= url('about') ?>" class="nav-link" >About Us</a>
+              <a href="<?= url('aboutus') ?>" class="nav-link" >About Us</a>
             </li>
             <li class="nav-item">
               <a href="<?= url('viewHome') ?>" class="nav-link">Enter the Game</a>

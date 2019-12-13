@@ -14,11 +14,15 @@ class PagesController {
 
     public function about() {
 
+        // Exemple pour appeler mon objet User et une requête SQL
+
         $players = User::findUserSport(3);
 
 
         view('pages.user', compact('players'));
     }
+
+    
 
     public function contact() {
 
