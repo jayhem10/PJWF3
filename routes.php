@@ -8,6 +8,7 @@ $router->get('', 'PagesController@home');
 
 // example.com/a-propos
 $router->get('about', 'PagesController@about');
+
 // example.com/contact
 $router->get('contact', 'PagesController@contact');
 

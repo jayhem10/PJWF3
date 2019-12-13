@@ -87,7 +87,7 @@ class User extends Db {
 
     }
 
-    public static function find(int $id) {
+    public static function findSportByUserId(int $id) {
 
         $bdd = Db::getDb();
 
@@ -105,13 +105,13 @@ class User extends Db {
 
     }
     
-    public static function plateformeAvailable(int $id) {
+    public static function findUserSport(int $id) {
 
         $bdd = Db::getDb();
 
         $query = $bdd->prepare('SELECT * 
-                            FROM sport
-                            INNER JOIN user ON s_id = id_sport
+                            FROM '. self::TABLE_NAME .'
+                            INNER JOIN sport ON s_id = id_sport
                             WHERE s_id = :id');
 
         // je l'execute 
