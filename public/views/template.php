@@ -40,7 +40,7 @@
                                     <a class="nav-link" href="<?= url('user') ?>">Mon arène</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="<?= url('logout') ?>">Logout</a>
+                                    <a class="btn btn-danger" href="<?= url('logout') ?>" role="button">Logout</a>
                                 </li>
                             <?php else: ?>
                                 <li class="nav-item">
