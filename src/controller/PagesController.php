@@ -19,8 +19,17 @@ class PagesController {
         $players = User::findUserSport(3);
 
 
-        view('pages.user', compact('players'));
+        view('pages.aboutus', compact('players'));
     }
+
+    public function user() {
+
+        $user = User::findUserSport(2);
+
+
+        view('pages.user', compact('user'));
+    }
+
 
     
 
@@ -104,8 +113,8 @@ class PagesController {
             
         $form = new Form($_POST);
 
-        $form->input('text', "nom", "Nom")->required()
-            ->input('text', "prenom", "Prénom")->required()
+        
+        $form->input('text', "prenom", "Prénom")->required()
             ->input('text', "email", "E-mail")->required()
             ->input('password', 'password', 'Mot de passe')->required()
             ->input('password', 'password2', 'Confirmer mot de passe')->required()
@@ -134,7 +143,7 @@ class PagesController {
                     "usr_prenom"   => $_POST['prenom'],
                     "usr_email"   => $_POST['email'],
                     "usr_password"   => $_POST['password'],
-                    "nom_sport"   => $_POST['sport']
+                    "id_sport"   => $_POST['sport']
                 ]);
 
                 // redirection apres ajout en BDD 

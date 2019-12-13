@@ -116,7 +116,7 @@ class User extends Db {
         $query = $bdd->prepare('SELECT * 
                             FROM '. self::TABLE_NAME .'
                             INNER JOIN sport ON s_id = id_sport
-                            WHERE s_id = :id');
+                            WHERE usr_id = :id');
 
         // je l'execute 
         $query->execute([
