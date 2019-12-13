@@ -1,6 +1,9 @@
 <?php ob_start(); ?>
 
-<h1>Contact</h1>
+<div class="container">
+
+
+<h2>Contact</h2><br>
 <?php if (!$formValid): ?>
 
     <?= $errors; ?>
@@ -9,8 +12,10 @@
 
 <?php else: ?>
 
-    <p>Votre demande à bien été prise en compte.</p>
+    <p>Votre message à bien été envoyé !</p>
 
 <?php endif; ?>
+
+</div> 
 
 <?php $content = ob_get_clean() ?> <?php view('template', compact('content')); ?>

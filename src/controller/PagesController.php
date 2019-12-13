@@ -30,7 +30,7 @@ class PagesController {
 
 
     
-
+//Formulaire de contact de l'utilisateur + envoi message en BDD
     public function contact() {
 
         $form = new Form($_POST);
@@ -39,7 +39,7 @@ class PagesController {
             ->input('text', "prenom", "Prénom")->required()
             ->input('text', "email", "E-mail")->required()
             ->input('textarea', "message", "Message")->required()
-            ->submit('enregistrer');
+            ->submit('Envoyer');
 
         $formulaireHtml = $form->getForm();
 
@@ -56,17 +56,16 @@ class PagesController {
             
                 // Enregistrement des données
                 // insertion des données via le model Userbase 
-                $id = User::signin([
-                    "usr_nom"     => $_POST['nom'],
+                $id = Contact::message([
+                    "Nom"     => $_POST['nom'],
                     //"usr_slug"    => slugify($_POST['nom']),
-                    "usr_prenom"   => $_POST['prenom'],
-                    "usr_email"   => $_POST['email'],
-                    "usr_password"   => password_hash( $_POST['password'], PASSWORD_DEFAULT),
-                    "id_sport"   => $_POST['sport']
+                    "Prenom"   => $_POST['prenom'],
+                    "Mail"   => $_POST['email'],
+                    "Message"   => $_POST['message']
                 ]);
 
                 // redirection apres ajout en BDD 
-                redirectTo('user/'.$id.'/'.slugify($_POST['nom']));
+                redirectTo('contact');
                 
 
             } else {
