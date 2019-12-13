@@ -128,6 +128,8 @@ class User extends Db {
 
     }
 
+
+    //CONNEXION A SON ESPACE
     public static function connect($email, $password) {
 
         $bdd = Db::getDb();
