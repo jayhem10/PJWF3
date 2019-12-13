@@ -24,7 +24,11 @@ $router->post('login', 'PagesController@login');
 $router->get('logout', 'PagesController@logout');
 
 // page utilisateur connecté : recupere ses infos pour les afficher
+<<<<<<< HEAD
 $router->get('user', 'PagesController@user');
+=======
+$router->get('user/{id}/{slug}', 'PagesController@about');
+>>>>>>> ac53cb2cc09c4bc4ae0c4206eb7b0c31f9adc4d8
 
 // reception des données 
 $router->post('contact', 'PagesController@contact');
