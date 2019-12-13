@@ -185,7 +185,7 @@ class User extends Db {
                 ->input('password', 'password2', 'Confirmer mot de passe')->required()
                 ->submit('S\'inscrire');
     
-            $formulaireHtml1 = $form->getForm();
+            $formulaireHtml = $form->getForm();
     
             $formValid  = false;
             $errors     = false; 
@@ -216,7 +216,7 @@ class User extends Db {
                 }
             }
     
-            view('pages.login', compact('formulaireHtml', 'errors', 'formValid'));
+            view('pages.signin', compact('formulaireHtml', 'errors', 'formValid'));
         }
 
         

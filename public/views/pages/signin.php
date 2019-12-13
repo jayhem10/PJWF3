@@ -4,7 +4,7 @@
     <?= $errors; ?>
     <br><h4>Inscris toi !</h4>
    <!-- formulaire -->
-   <?= $formulaireHtml1; ?>
+   <?= $formulaireHtml; ?>
 </div>
  
 

@@ -17,7 +17,7 @@ class PagesController {
         $players = User::findUserSport(3);
 
 
-        view('pages.about', compact('players'));
+        view('pages.user', compact('players'));
     }
 
     public function contact() {
@@ -62,7 +62,7 @@ class PagesController {
             ->input('password', 'password', 'Mot de passe')->required()
             ->submit('Se connecter');
 
-        $formulaireHtml2 = $form->getForm();
+        $formulaireHtml = $form->getForm();
 
         $formValid  = false;
         $errors     = false; 
@@ -80,10 +80,8 @@ class PagesController {
                 // user connecté 
                 redirectTo('user');
             }else {
-                
-                echo 'Incorrect';
-                
-                //$errors = alert('Identifiants incorrects');
+                                               
+                $errors = alert('Identifiants incorrects');
             }
 
         } else {
@@ -91,14 +89,14 @@ class PagesController {
             $errors =  $form->displayErrors();
         }
 
-        view('pages.login', compact('formulaireHtml2', 'errors', 'formValid'));
+        view('pages.login', compact('formulaireHtml', 'errors', 'formValid'));
     }
 
     //FONCTION INSCRIRE SUR LE SITE
 
     public function signin() {
 
-        $sport = Sports::getAllSelect();
+        $sport = User::signin();
             
         $form = new Form($_POST);
 
@@ -111,7 +109,7 @@ class PagesController {
           
             ->submit('Inscris-toi');
 
-        $formulaireHtml1 = $form->getForm();
+        $formulaireHtml = $form->getForm();
 
         $formValid  = false;
         $errors     = false; 
@@ -145,7 +143,7 @@ class PagesController {
             }
         }
 
-        view('pages.signin', compact('formulaireHtml1', 'errors', 'formValid'));
+        view('pages.signin', compact('formulaireHtml', 'errors', 'formValid'));
     }
 
 

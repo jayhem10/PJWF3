@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  jeu. 12 déc. 2019 à 10:56
+-- Généré le :  ven. 13 déc. 2019 à 10:05
 -- Version du serveur :  10.1.31-MariaDB
 -- Version de PHP :  7.2.4
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `sport` (
-  `id` int(11) NOT NULL,
+  `s_id` int(11) NOT NULL,
   `nom_sport` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `img_sport` text COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -38,7 +38,7 @@ CREATE TABLE `sport` (
 -- Déchargement des données de la table `sport`
 --
 
-INSERT INTO `sport` (`id`, `nom_sport`, `img_sport`) VALUES
+INSERT INTO `sport` (`s_id`, `nom_sport`, `img_sport`) VALUES
 (1, 'Basketball', 'https://www.nbcsports.com/northwest/sites/csnnw/files/2016/06/19/usatsi_9339553.jpg'),
 (2, 'Football', 'https://www.etftrends.com/wp-content/uploads/2019/09/ETF-Provider-SoFi-Purchases-Naming-Rights-for-LA-Football-Stadium.jpg'),
 (3, 'NHL', 'https://ocn-media.s3.amazonaws.com/1bf237cf-ebaa-4999-85ea-e759e2fa8b40.jpg'),
@@ -65,7 +65,10 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`usr_id`, `usr_prenom`, `usr_nom`, `usr_email`, `usr_password`, `usr_status`, `id_sport`) VALUES
-(1, 'Jean', 'Noel', 'j.noel@gmail.com', 'admin', 1, 1);
+(2, 'Jérémy', 'Noble', 'noble.jka@gmail.com', 'admin', 1, 1),
+(3, 'Jérôme', 'Brovedani', 'jerome.brovedani@gmail.com', 'admin', 1, 2),
+(4, 'Yassine', 'Fassi', 'yassine.fassi@gmail.com', 'admin', 1, 3),
+(5, 'Anthony', 'Debuire', 'anthony.debuire@gmail.com', 'admin', 1, 4);
 
 --
 -- Index pour les tables déchargées
@@ -75,7 +78,7 @@ INSERT INTO `user` (`usr_id`, `usr_prenom`, `usr_nom`, `usr_email`, `usr_passwor
 -- Index pour la table `sport`
 --
 ALTER TABLE `sport`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`s_id`);
 
 --
 -- Index pour la table `user`
@@ -91,13 +94,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT pour la table `sport`
 --
 ALTER TABLE `sport`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `s_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `usr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `usr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
