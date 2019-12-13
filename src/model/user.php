@@ -174,6 +174,7 @@ class User extends Db {
             // je verifie si l'e-mail est présent en BDD 
             $query = $bdd->prepare('SELECT * 
                                     FROM '. self::TABLE_NAME .'
+                                    INNER JOIN sport ON id_sport = s_id
                                     WHERE usr_email = ?');
         
             // j'execute ma requete 

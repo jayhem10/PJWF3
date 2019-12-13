@@ -52,6 +52,8 @@ h2{
 }
 
 
+
+
 .hover{
 	position: relative;
 	width: 100%;
@@ -94,7 +96,7 @@ image lebron effet
 	position: relative;
 	width: 100%;
 	margin: 0 auto;
-}
+} 
 
 
 .hover1 .titrelebron{
@@ -169,4 +171,8 @@ image lebron effet
 .hover2:hover  img {
 	opacity: .8;
 }
-
+ 
+.view{
+	height:100vh;
+	background-size: cover;
+}

@@ -16,20 +16,16 @@ class PagesController {
 
         // Exemple pour appeler mon objet User et une requête SQL
 
-
-
-<<<<<<< HEAD
         view('pages.aboutus');
-=======
-        view('pages.user', compact('players'));
->>>>>>> ac53cb2cc09c4bc4ae0c4206eb7b0c31f9adc4d8
     }
 
     public function user() {
        
         $user = $_SESSION['user'];
 
-        view('pages.user',compact('user'));
+
+
+        view('pages.user',compact('user','id'));
     }
 
 
