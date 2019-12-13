@@ -14,10 +14,10 @@ class PagesController {
 
     public function about() {
 
-        $var = findOne();
+        $players = User::findUserSport(3);
 
 
-        view('pages.about', compact('var'));
+        view('pages.about', compact('players'));
     }
 
     public function contact() {

@@ -8,8 +8,17 @@
 
 <?php 
 echo '<pre>';
-var_dump($var); ?>
+var_dump($players);
 
+foreach($players as $player): ?>
+
+<li> <?=$player['usr_prenom'];?>
+
+
+
+<?php endforeach; ?>
+
+?>
 
 <?php $content = ob_get_clean() ?> 
 <?php view('template', compact('content')); ?>
