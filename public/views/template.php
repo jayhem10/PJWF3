@@ -106,6 +106,9 @@
             <p>
               <a href="#!">BLOG</a>
             </p>
+            <p>
+            <a class="btn btn-dark" href="<?= url('contact') ?>" role="button">Ecrivez-nous !</a>
+            </p>
           </li>
         </ul>
 
@@ -121,10 +124,6 @@
         <h5 class="font-weight-bold text-uppercase mb-4">Adresse</h5>
 
         <ul class="list-unstyled">
-          <li>
-            <p>
-              <i class="fas fa-home mr-3"></i> 69 009 Lyon</p>
-          </li>
           <li>
             <p>
               <i class="fas fa-home mr-3"></i>5 rue Louis Loucheur</p>

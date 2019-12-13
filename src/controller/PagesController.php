@@ -19,7 +19,7 @@ class PagesController {
         $players = User::findUserSport();
 
 
-        view('pages.aboutus', compact('players'));
+        view('pages.user', compact('players'));
     }
 
     public function user($id,$slug) {
@@ -49,16 +49,32 @@ class PagesController {
         $errors     = false; 
 
         // si le formulaire est validé 
-        if($data = $form->valid()){
+        if (!empty($_POST)) {
+            
+            if($form->valid()){
 
-            // formulaire valide
-            $formValid = true;
+                // formulaire valide
+                $formValid = true;
+            
+                // Enregistrement des données
+                // insertion des données via le model Userbase 
+                $id = User::signin([
+                    "usr_nom"     => $_POST['nom'],
+                    //"usr_slug"    => slugify($_POST['nom']),
+                    "usr_prenom"   => $_POST['prenom'],
+                    "usr_email"   => $_POST['email'],
+                    "usr_password"   => password_hash( $_POST['password'], PASSWORD_DEFAULT),
+                    "id_sport"   => $_POST['sport']
+                ]);
 
-            // Enregistrement des données
+                // redirection apres ajout en BDD 
+                redirectTo('user/'.$id.'/'.slugify($_POST['nom']));
+                
 
-        } else {
-            // affichage des erreurs 
-            $errors =  $form->displayErrors();
+            } else {
+                // affichage des erreurs 
+                $errors =  $form->displayErrors();
+            }
         }
 
         // vue de la page contact 
