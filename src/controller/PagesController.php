@@ -22,10 +22,11 @@ class PagesController {
     public function user() {
        
         $user = $_SESSION['user'];
+        $joueur = Player::findAll();
 
 
 
-        view('pages.user',compact('user','id'));
+        view('pages.user',compact('user','joueur'));
     }
 
 
