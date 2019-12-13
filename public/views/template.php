@@ -17,7 +17,7 @@
 
 <header>
   <body>
-      <nav class="navbar navbar-expand-sm bg-light navbar-light">
+      <nav class="navbar navbar-expand-sm bg-light navbar-light" >
         <a href="<?= url('') ?>" class="navbar-brand">Be The Next</a>
 
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
@@ -33,7 +33,7 @@
               <a href="<?= url('viewHome') ?>" class="nav-link">Enter the Game</a>
             </li>
             <li class="nav-item">
-              <a href="index.php?action=Eshop" class="nav-link">E-Shop</a>
+              <a href="<?= url('contact') ?>" class="nav-link">Contact</a>
             </li>
             <?php if (isset($_SESSION['user'])): ?>
                                 <li class="nav-item">
@@ -46,9 +46,7 @@
                                 <li class="nav-item">
                                 <a class="btn btn-primary" href="<?= url('login') ?>" role="button">Login</a>
                                 <a class="btn btn-warning" href="<?= url('signin') ?>" role="button">Sign In</a>
-                                
-
-                                </li>
+                                                          </li>
                             <?php endif; ?>
             
           </ul>
@@ -107,7 +105,6 @@
               <a href="#!">BLOG</a>
             </p>
             <p>
-            <a class="btn btn-dark" href="<?= url('contact') ?>" role="button">Ecrivez-nous !</a>
             </p>
           </li>
         </ul>

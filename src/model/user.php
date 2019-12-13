@@ -206,12 +206,15 @@ class User extends Db {
         
         }
 
+        //creation d'un nouvel utilisateur en BDD
+
         public static function signin($data) {
 
             $nouvelId = Db::dbCreate(self::TABLE_NAME, $data);
     
             return $nouvelId;
         }
+
 
 
 

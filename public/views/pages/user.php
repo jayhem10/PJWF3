@@ -1,8 +1,8 @@
 <?php ob_start(); ?>
 
-<?php var_dump($user)?>
-<h4>Bienvenue dans ton arène <b><?= $user['usr_prenom']; ?></b>!</h4>
-
+<div class="container">
+<h3>Bienvenue dans ton arène <b><?= $user['usr_prenom']; ?></b>!</h3><br>
+</div> 
 
 <div class="container">
     <h5>Tes sportifs préférés sont ici :</h5>
