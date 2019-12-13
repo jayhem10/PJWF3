@@ -51,6 +51,10 @@ function slugify($text) {
     return $text;
 }
 
+function alert($text, $alert = 'danger') {
+    return '<div class="alert alert-'.$alert.'" role="alert">'.$text.'</div>'; 
+}
+
 function view($path, $vars = null, $include = true) {
 
     // Format : resource.page

@@ -35,9 +35,9 @@
             <li class="nav-item">
               <a href="index.php?action=Eshop" class="nav-link">E-Shop</a>
             </li>
-            <?php if (isset($_SESSION['USER'])): ?>
+            <?php if (isset($_SESSION['user'])): ?>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="<?= url('admin') ?>">Admin</a>
+                                    <a class="nav-link" href="<?= url('user') ?>">Mon arène</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?= url('logout') ?>">Logout</a>
