@@ -164,11 +164,13 @@ class PagesController {
         
     public function logout() {
 
-        // destruction de la session utilisateur 
-        User::logout();
-        // session_destroy();
+        if (isset($_SESSION['user'])) {
+      
+            // Supression des variables de session et de la session
+            session_destroy();
+            redirectTo('');
 
-        redirectTo('viewHome');
+        }
     
    
     }
