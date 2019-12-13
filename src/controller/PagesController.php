@@ -16,18 +16,16 @@ class PagesController {
 
         // Exemple pour appeler mon objet User et une requête SQL
 
-        $players = User::findUserSport();
 
 
-        view('pages.aboutus', compact('players'));
+        view('pages.aboutus');
     }
 
-    public function user($id,$slug) {
+    public function user() {
+       
+        $user = $_SESSION['user'];
 
-        $user = User::findOne($id);
-
-
-        view('pages.user', compact('user'));
+        view('pages.user',compact('user'));
     }
 
 
@@ -71,7 +69,7 @@ class PagesController {
 
         $form = new Form($_POST);
 
-        $form->input('text', 'email', 'E-mail')->required()
+        $form->input('text', 'email', 'E-mail')->required()->is_email()
             ->input('password', 'password', 'Mot de passe')->required()
             ->submit('Se connecter');
 
@@ -146,9 +144,8 @@ class PagesController {
                     "usr_password"   => password_hash( $_POST['password'], PASSWORD_DEFAULT),
                     "id_sport"   => $_POST['sport']
                 ]);
-
                 // redirection apres ajout en BDD 
-                redirectTo('user/'.$id.'/'.slugify($_POST['nom']));
+                redirectTo('login');
                 
 
             } else {

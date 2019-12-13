@@ -84,8 +84,11 @@ class User extends Db {
             'id' => $id
         ]);
 
+        
+
         // je retourne la liste d'articles
         return $query->fetch(PDO::FETCH_ASSOC);
+        
 
     }
 
@@ -170,7 +173,7 @@ class User extends Db {
             
             // je verifie si l'e-mail est présent en BDD 
             $query = $bdd->prepare('SELECT * 
-                                    FROM user 
+                                    FROM '. self::TABLE_NAME .'
                                     WHERE usr_email = ?');
         
             // j'execute ma requete 
@@ -181,7 +184,7 @@ class User extends Db {
             $user = $query->fetch(PDO::FETCH_ASSOC);
 
         
-            // si j'ai un utilisateur corresspondant à l'email 
+            // si j'ai un utilisateur correspondant à l'email 
             if ($user) {
         
                 // je vérifie si le MDP tapé correspond à la clé de hashage 
@@ -193,10 +196,6 @@ class User extends Db {
                     // je stock les infos user dans une variable de session 
                     $_SESSION['user'] = $user;
                     redirectTo('user');    
-                    
-        
-                    // je retourne les infos utilisateur 
-                    return $user;
             
                 }
                 else {

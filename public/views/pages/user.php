@@ -1,7 +1,7 @@
 <?php ob_start(); ?>
 
-<?php foreach ($user as $player): ?>
-<h4>Bienvenue dans ton arène <b><?= $player['usr_prenom']; ?></b>!</h4>
+<?php var_dump($user)?>
+<h4>Bienvenue dans ton arène <b><?= $user['usr_prenom']; ?></b>!</h4>
 
 
 <div class="container">
@@ -22,8 +22,8 @@
     
     </div>
   </div>
-  <?php endforeach ;?>
+
 </div>
-</div>
+</div> 
 
 <?php $content = ob_get_clean() ?> <?php view('template', compact('content')); ?>
