@@ -13,8 +13,9 @@
     <div class="card-body">
       <h5 class="card-title"><?= $player['player_name']?></h5>
       <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      <a href="<?= url('players/'.$player['player_id']); ?>" class="btn btn-sm btn-primary">Consulter sa fiche</a>
-      <a href="<?= url('admin/delete/'.$jv['jv_id']); ?>" class="btn btn-sm btn-danger">Unfollow</a>    
+      <a class="btn btn-succe" href="<?=url('players/'.$player['player_id']);?>" role="button">Consulter sa fiche</a>
+      <a class="btn btn-warning" href="<?= url('admin/delete/'.$jv['jv_id']);?>" role="button">Unfollow</a>
+
     
     </div>
   </div>
