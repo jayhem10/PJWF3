@@ -22,8 +22,8 @@ $router->post('login', 'PagesController@login');
 // déconnexion utilisateur 
 $router->get('logout', 'PagesController@logout');
 
-// page admin 
-$router->get('user', 'AdminController@addSport');
+// page utilisateur connecté : recupere ses infos pour les afficher
+$router->get('user', 'PagesController@findOne');
 
 // reception des données 
 $router->post('contact', 'PagesController@contact');
