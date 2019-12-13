@@ -55,6 +55,7 @@ class User extends Db {
         return;
     }
 
+    // ENVOI TOUS LES USERS
     public static function findAll() {
 
         $bdd = Db::getDb();
@@ -69,6 +70,7 @@ class User extends Db {
         return $query->fetchAll(PDO::FETCH_ASSOC);       
     }
 
+// ENVOI LES INFOS DE L'USER PAR SON ID SEULEMENT
     public static function findOne(int $id) {
 
         $bdd = Db::getDb();
@@ -87,6 +89,7 @@ class User extends Db {
 
     }
 
+    // ENVOI LES INFOS DE LA TABLE SPORT EN FONCTION DE L'ID User
     public static function findSportByUserId(int $id) {
 
         $bdd = Db::getDb();
@@ -105,6 +108,7 @@ class User extends Db {
 
     }
     
+    // ENVOI L'UTILISATEUR PAR ID ET LA TABLE SPORT EN RELATION
     public static function findUserSport(int $id) {
 
         $bdd = Db::getDb();
