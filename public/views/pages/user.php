@@ -9,48 +9,44 @@
 
 </div> 
 
-<?php foreach( $joueur as $joueurs) : ?>
+
 
   <div class="container">
     <h5 class="text-light pt-5">Tes sportifs préférés sont ici :</h5>
 
-  
+    <?php foreach( $joueur as $joueurs) : ?>
 
         <div class="card-deck py-5">
 
           <div class="card">
             <img class="card-img-top" src="<?= $joueurs['p_img']; ?>" alt="Card image cap">
             <div class="card-body">
-              <h5 class="card-title"><?= $joueurs['p_nom']?></h5>
-              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <a class="btn btn-success" href="<?=url('players/'.$player['player_id']);?>" role="button">Consulter sa fiche</a>
-              <a class="btn btn-warning" href="<?= url('admin/delete/'.$jv['jv_id']);?>" role="button">Unfollow</a>
+              <h5 class="card-title"><?= $joueurs['p_nom']?> <?= $joueurs['p_prenom']?></h5>
+              <p class="card-text">Club actuel : <?= $joueurs['p_club']?></p>
+              <p class="card-text">Né(e) le : <?= $joueurs['p_birth']?></p>
+              <a class="btn btn-success" href="<?=url('player/'.$joueurs['p_id']);?>" role="button">Consulter sa fiche</a>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card-img-top" src="<?= $joueurs['p_img']; ?>" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title"><?= $joueurs['p_nom']?> <?= $joueurs['p_prenom']?></h5>
+              <p class="card-text">Club actuel : <?= $joueurs['p_club']?></p>
+              <p class="card-text">Né(e) le : <?= $joueurs['p_birth']?></p>
+              <a class="btn btn-success" href="<?=url('player/'.$joueurs['p_id']);?>" role="button">Consulter sa fiche</a>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card-img-top" src="<?= $joueurs['p_img']; ?>" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title"><?= $joueurs['p_nom']?> <?= $joueurs['p_prenom']?></h5>
+              <p class="card-text">Club actuel : <?= $joueurs['p_club']?></p>
+              <p class="card-text">Né(e) le : <?= $joueurs['p_birth']?></p>
+              <a class="btn btn-success" href="<?=url('player/'.$joueurs['p_id']);?>" role="button">Consulter sa fiche</a>
             </div>
           </div>
 
           
-          <div class="card">
-            <img class="card-img-top" src="<?= $joueurs['p_img']; ?>" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title"><?= $joueurs['p_nom']?></h5>
-              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <a class="btn btn-success" href="<?=url('players/'.$player['player_id']);?>" role="button">Consulter sa fiche</a>
-              <a class="btn btn-warning" href="<?= url('admin/delete/'.$jv['jv_id']);?>" role="button">Unfollow</a>
-            </div>
-          </div>
-
-          
-          <div class="card">
-            <img class="card-img-top" src="<?= $joueurs['p_img']; ?>" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title"><?= $joueurs['p_nom']?></h5>
-              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <a class="btn btn-success" href="<?=url('players/'.$joueurs['player_id']);?>" role="button">Consulter sa fiche</a>
-              <a class="btn btn-warning" href="<?= url('admin/delete/'.$jv['jv_id']);?>" role="button">Unfollow</a>
-            </div>
-          </div>
-        </div>
-        </div>
 </div>
 
       

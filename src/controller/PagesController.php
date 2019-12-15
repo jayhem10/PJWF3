@@ -29,6 +29,14 @@ class PagesController {
         view('pages.user',compact('user','joueur'));
     }
 
+    public function player($id) {
+       
+        $player = Player::findOne($id);
+
+
+        view('pages.player',compact('player'));
+    }
+
 
     
 //Formulaire de contact de l'utilisateur + envoi message en BDD
@@ -57,7 +65,7 @@ class PagesController {
             
                 // Enregistrement des données
                 // insertion des données via le model Userbase 
-                $id = Contact::message([
+                Contact::save([
                     "Nom"     => $_POST['nom'],
                     //"usr_slug"    => slugify($_POST['nom']),
                     "Prenom"   => $_POST['prenom'],
@@ -123,14 +131,12 @@ class PagesController {
 
     public function signin() {
 
+        $form = new Form($_POST);
         
         $sport = User::getAllSelect();
-            
-        $form = new Form($_POST);
-
         
         $form->input('text', "prenom", "Prénom")->required()
-        ->input('text', "nom", "Nom")->required()
+            ->input('text', "nom", "Nom")->required()
             ->input('text', "email", "E-mail")->required()
             ->input('password', 'password', 'Mot de passe')->required()
             ->input('password', 'password2', 'Confirmer mot de passe')->required()
@@ -152,14 +158,16 @@ class PagesController {
             
                 // Enregistrement des données
                 // insertion des données via le model Userbase 
-                $id = User::signin([
-                    "usr_nom"     => $_POST['nom'],
-                    //"usr_slug"    => slugify($_POST['nom']),
+                User::save([
                     "usr_prenom"   => $_POST['prenom'],
+                    "usr_nom"     => $_POST['nom'],
+                    "usr_slug"    => slugify($_POST['nom']),
                     "usr_email"   => $_POST['email'],
                     "usr_password"   => password_hash( $_POST['password'], PASSWORD_DEFAULT),
+                    "usr_status"   => 1,
                     "id_sport"   => $_POST['sport']
                 ]);
+               
                 // redirection apres ajout en BDD 
                 redirectTo('login');
                 

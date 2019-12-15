@@ -87,14 +87,6 @@ class Contact extends Db {
     }
 
     
-        // Envoi et enregistrement du message en BDD
-
-        public static function message($data) {
-
-            $nouvelId = Db::dbCreate(self::TABLE_NAME, $data);
-    
-            return $nouvelId;
-        }
 
 
 } 

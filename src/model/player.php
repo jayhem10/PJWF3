@@ -62,7 +62,7 @@ class Player extends Db {
 
         $query = $bdd->prepare('SELECT *
                             FROM '. self::TABLE_NAME.'
-                            LIMIT 0 , 1');
+                            LIMIT 0 , 3');
 
         // je l'execute 
         $query->execute();
@@ -72,7 +72,7 @@ class Player extends Db {
     }
 
 // ENVOI LES INFOS DE L'USER PAR SON ID SEULEMENT
-    public static function findOne(int $id) {
+    public static function findOne($id) {
 
         $bdd = Db::getDb();
 
@@ -84,8 +84,6 @@ class Player extends Db {
         $query->execute([
             'id' => $id
         ]);
-
-        
 
         // je retourne la liste d'articles
         return $query->fetch(PDO::FETCH_ASSOC);

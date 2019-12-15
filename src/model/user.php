@@ -110,6 +110,7 @@ class User extends Db {
         return $query->fetchAll(PDO::FETCH_ASSOC);
 
     }
+    
 
         // ENVOI LES INFOS DE LA TABLE SPORT EN FONCTION DE L'ID User
         public static function nomSport() {
@@ -207,14 +208,7 @@ class User extends Db {
         
         }
 
-        //creation d'un nouvel utilisateur en BDD
 
-        public static function signin($data) {
-
-            $nouvelId = Db::dbCreate(self::TABLE_NAME, $data);
-    
-            return $nouvelId;
-        }
 
 
 
