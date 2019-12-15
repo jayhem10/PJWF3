@@ -56,9 +56,9 @@
 </div>
 </div>
 
-<div class="text-center titre2 bg-dark my-2">
-<h2 class="text-light py-5"> INCRIS-TOI ET SUIS TES JOUEURS FAVORIS</h2>
-<a class="btn btn-warning btn-lg my-5" href="<?= url('signin') ?>" role="button">M'inscrire</a>
+<div class="text-center titre2 my-2">
+<h2 class="text-light py-5 "> INCRIS-TOI ET SUIS TES JOUEURS FAVORIS</h2>
+<a class="btn btn-warning btn-lg  my-5" href="<?= url('signin') ?>" role="button">M'inscrire</a>
 </div>
 
 <?php $content = ob_get_clean() ?> <?php view('template', compact('content')); ?>
