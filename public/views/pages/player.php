@@ -4,9 +4,17 @@
 
 
   <div class="container">
-    <h1><?= $player['p_nom']?></h1>
+    <h1><?= $player['p_nom']?> <?= $player['p_prenom']?></h1>
     </div>
-<?php var_dump($player);?>
+
+  <div class="container">
+	  <div class="row">
+		  <div class="full">
+	      <img src="<?= $player['p_full']?>" class="img-fluid">
+	    </div>
+    </div>
+  </div>
+
 
 
 

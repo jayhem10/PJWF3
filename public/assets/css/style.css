@@ -174,5 +174,7 @@ image lebron effet
  
 .view{
 	height:100vh;
-	background-size: cover;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
 }

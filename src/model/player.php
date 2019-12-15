@@ -61,8 +61,20 @@ class Player extends Db {
         $bdd = Db::getDb();
 
         $query = $bdd->prepare('SELECT *
-                            FROM '. self::TABLE_NAME.'
-                            LIMIT 0 , 3');
+                            FROM '. self::TABLE_NAME);
+
+    
+        $query->execute();
+
+        // je retourne la liste darticles
+        return $query->fetchAll(PDO::FETCH_ASSOC);       
+    }
+
+    public static function findTrois() {
+
+        $bdd = Db::getDb();
+
+        $query = $bdd->prepare('select * from '. self::TABLE_NAME.' order by p_id desc LIMIT 0,3');
 
         // je l'execute 
         $query->execute();
@@ -70,6 +82,7 @@ class Player extends Db {
         // je retourne la liste d'articles
         return $query->fetchAll(PDO::FETCH_ASSOC);       
     }
+
 
 // ENVOI LES INFOS DE L'USER PAR SON ID SEULEMENT
     public static function findOne($id) {

@@ -22,7 +22,7 @@ class PagesController {
     public function user() {
        
         $user = $_SESSION['user'];
-        $joueur = Player::findAll();
+        $joueur = Player::findTrois();
 
 
 
