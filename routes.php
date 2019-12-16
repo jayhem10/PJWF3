@@ -29,6 +29,9 @@ $router->get('user', 'PagesController@user');
 // page player interactif
 $router->get('player/{id}', 'PagesController@player');
 
+// page TOUS les joueurs
+$router->get('allplayer', 'PagesController@allplayer');
+
 // reception des données 
 $router->post('contact', 'PagesController@contact');
 
