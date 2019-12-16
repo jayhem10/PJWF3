@@ -74,7 +74,7 @@ class Player extends Db {
 
         $bdd = Db::getDb();
 
-        $query = $bdd->prepare('select * from '. self::TABLE_NAME.' order by p_id desc LIMIT 0,3');
+        $query = $bdd->prepare('select * from '. self::TABLE_NAME.' order by p_id asc LIMIT 0,3');
 
         // je l'execute 
         $query->execute();

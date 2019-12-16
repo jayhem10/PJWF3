@@ -3,8 +3,8 @@
 
 
 
-  <div class="container">
-    <h1><?= $player['p_prenom']?> <?= $player['p_nom']?> </h1>
+  <div class="container-fluid">
+    <h1 class="bg-dark text-light text-center mb-5"><?= $player['p_prenom']?> <?= $player['p_nom']?> </h1>
     </div>
 
     <div class="container">
@@ -27,6 +27,13 @@
 	    </div>
     </div>
   </div>
+
+  <div class="container-fluid  bg-dark text-light block-center my-5">
+  <div class="row">
+  <img src="<?= $player['code_club']?>" class="col-12 col-md-6 mx-auto" style="max-width: 30%; height:auto;" alt="">
+  <h2 class="col-12 col-md-6 my-auto text-center"><?= $player['p_club']?></h2> 
+    </div>
+    </div>
 
 
 
