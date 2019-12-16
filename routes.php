@@ -27,10 +27,10 @@ $router->get('logout', 'PagesController@logout');
 $router->get('user', 'PagesController@user');
 
 // page player interactif
-$router->get('player/{id}', 'PagesController@player');
+$router->get('player/{id}', 'PlayerController@player');
 
 // page TOUS les joueurs
-$router->get('allplayer', 'PagesController@allplayer');
+$router->get('allplayer', 'PlayerController@allplayer');
 
 // reception des données 
 $router->post('contact', 'PagesController@contact');

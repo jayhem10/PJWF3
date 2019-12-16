@@ -132,9 +132,12 @@ h2{
 }
 /* Image hover dans la page tous les joueurs FIN */
 
- 
-
 .view{
 	height:100vh;
 	background-size: cover;
+}
+#stat {
+	position: absolute;
+	margin-left: 10% ;
+	margin-top: 10%;
 }
