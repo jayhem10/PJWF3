@@ -100,10 +100,10 @@ h2{
 		} 
 
 
-		.hover1 .titrelebron{
+		.hover1 .titre{
 			color: #ffdd00;
 			position: absolute;
-			font-size: 5em;
+			font-size: 1.5em;
 			top: 45%;
 			width: 100%;
 			text-align: center;
@@ -112,7 +112,7 @@ h2{
 			display: none;
 		}
 
-		.hover1:hover .titrelebron{
+		.hover1:hover .titre{
 
 			display: block;
 			-webkit-transition-duration: 10s ease-in;

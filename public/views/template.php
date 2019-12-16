@@ -30,9 +30,6 @@
               <a href="<?= url('aboutus') ?>" class="nav-link" >About Us</a>
             </li>
             <li class="nav-item">
-              <a href="<?= url('viewHome') ?>" class="nav-link">Enter the Game</a>
-            </li>
-            <li class="nav-item">
               <a href="<?= url('contact') ?>" class="nav-link">Contact</a>
             </li>
             <?php if (isset($_SESSION['user'])): ?>
