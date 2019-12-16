@@ -3,7 +3,7 @@
 //     }, function(){
 //     $(this).css("background-color", "purple");
 //   });
-  $('#stat').tooltip({ 
+$('.stat').popover({ 
     boundary: 'window',
     delay: { "show": 500, "hide": 4000 }
  });

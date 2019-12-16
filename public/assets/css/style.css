@@ -116,7 +116,7 @@ h2{
 
 			display: block;
 			-webkit-transition-duration: 10s ease-in;
-			transition-duration: : 10s ease-in;
+			transition-duration:  10s ease-in;
 		}
 
 
@@ -136,8 +136,23 @@ h2{
 	height:100vh;
 	background-size: cover;
 }
+#shop1 {
+	position: absolute;
+	margin-left: -5% ;
+	margin-top: 5%;
+}
 #stat {
 	position: absolute;
-	margin-left: 10% ;
-	margin-top: 10%;
+	margin-left: 85% ;
+	margin-top: 5%;
+}
+#funfact {
+	position: absolute;
+	margin-left: -5% ;
+	margin-top: 45%;
+}
+#shopperso {
+	position: absolute;
+	margin-left: 85% ;
+	margin-top: 45%;
 }
