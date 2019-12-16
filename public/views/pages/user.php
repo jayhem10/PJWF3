@@ -34,8 +34,9 @@
       <?php endforeach; ?>
         
     </div>    
-    <a class="btn btn-warning center-block" href=" <?= url('allplayer')?>" role="button">Découvre les autres joueurs</a>
  
+    <a class="btn btn-warning center-block" href=" <?= url('allplayer')?>" role="button">Découvre les autres joueurs</a>
+
 </div>
 </div>
 </div>

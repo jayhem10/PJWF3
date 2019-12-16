@@ -16,7 +16,7 @@
 
 	  <div class="row">
 		  <div class="full">
-	      <img src="<?= $player['p_full']?>" class="img-fluid">
+	      <img src="<?= $player['p_img_l']?>" class="img-fluid">
 	    </div>
     </div>
   </div>
