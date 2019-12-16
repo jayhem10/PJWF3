@@ -29,11 +29,13 @@
                   <a class="btn btn-success" href="<?=url('player/'.$joueurs['p_id']);?>" role="button">Consulter sa fiche</a>
                 </div>
               </div>    
-            </div>
+          </div>
 
-        <?php endforeach; ?>
+      <?php endforeach; ?>
         
-      </div> 
+    </div>    
+    <a class="btn btn-warning center-block" href=" <?= url('allplayer')?>" role="button">Découvre les autres joueurs</a>
+ 
 </div>
 </div>
 </div>

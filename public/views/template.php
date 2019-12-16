@@ -40,6 +40,9 @@
                                     <a class="nav-link" href="<?= url('user') ?>">Mon arène</a>
                                 </li>
                                 <li class="nav-item">
+                                    <a class="nav-link" href="<?= url('allplayer') ?>">Star Center</a>
+                                </li>
+                                <li class="nav-item">
                                     <a class="btn btn-danger" href="<?= url('logout') ?>" role="button">Logout</a>
                                 </li>
                             <?php else: ?>
