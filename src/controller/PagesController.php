@@ -40,9 +40,10 @@ class PagesController {
     public function allplayer() {
        
         $players = Player::findAll();
+        $sports = User::getAllSelect();
 
 
-        view('pages.allplayer',compact('players'));
+        view('pages.allplayer',compact('players', 'sports'));
     }
 
 

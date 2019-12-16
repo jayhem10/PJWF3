@@ -1,6 +1,23 @@
 <?php ob_start(); ?>
 
 
+<br>
+<div class="container">
+    <div class="input-group">
+    <select class="custom-select" id="inputGroupSelect04">
+        <option selected>Chercher un joueur</option>      
+        <?php foreach($players as $listPlayers) : ?>
+        <option value="2"><?= $listPlayers['p_prenom'].' '.$listPlayers['p_nom'] ?></option>
+        </option>
+         <?php endforeach; ?>
+     
+    </select>
+    <div class="input-group-append">
+        <button class="btn btn-outline-warning" type="button">Rechercher</button>
+    </div>
+    </div>
+</div>
+
 
 <?php foreach($players as $listPlayers) : ?>
 <div class="container my-5">
