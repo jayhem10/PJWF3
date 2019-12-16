@@ -37,6 +37,14 @@ class PagesController {
         view('pages.player',compact('player'));
     }
 
+    public function allplayer() {
+       
+        $players = Player::findAll();
+
+
+        view('pages.allplayer',compact('players'));
+    }
+
 
     
 //Formulaire de contact de l'utilisateur + envoi message en BDD
