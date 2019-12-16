@@ -10,12 +10,16 @@
     <div class="container">
     <div class="row">
 		<div class="col-12">
-      <a id='stat' class="btn btn-secondary" target="_blank" data-toggle="tooltip" data-placement="top" href="https://www.wilson.com/fr-fr/football/footballs/nfl/nfl-duke/the-duke-nfl-football" title="">
- Ballon du match
-</a>
-<a id='stat' class="btn btn-secondary" target="_blank" data-toggle="tooltip" data-placement="top" href="https://www.wilson.com/fr-fr/football/footballs/nfl/nfl-duke/the-duke-nfl-football" title="">
- Ballon du match
-</a>
+
+    <a tabindex="0" id="shop1" target="_blank" class="stat btn btn-dark" role="button" data-toggle="popover" data-placement="bottom" data-trigger="focus" title="Accessoires" href="https://www.wilson.com/fr-fr/football/footballs/nfl/nfl-duke/the-duke-nfl-football"data-content="Profitez des meilleurs accessoires.">Accessoires de match</a>
+
+    <a tabindex="0" id="stat" class="stat btn btn-dark" role="button" data-toggle="popover" data-trigger="focus" data-placement="bottom" title="STAtistiques" data-content="Wahoo quel joueur exceptionnel">STATS</a>
+
+
+    <a tabindex="0" id="funfact" class="stat btn btn-dark" role="button" data-toggle="popover" data-trigger="focus" data-placement="bottom" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?">Funfact</a>
+
+    <a tabindex="0" id="shopperso" class="stat btn btn-dark" role="button" data-toggle="popover" data-trigger="focus" data-placement="bottom" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?">Shop perso</a>
+
 
 	  <div class="row">
 		  <div class="full">
