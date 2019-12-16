@@ -13,10 +13,13 @@
       <a id='stat' class="btn btn-secondary" target="_blank" data-toggle="tooltip" data-placement="top" href="https://www.wilson.com/fr-fr/football/footballs/nfl/nfl-duke/the-duke-nfl-football" title="">
  Ballon du match
 </a>
+<a id='stat' class="btn btn-secondary" target="_blank" data-toggle="tooltip" data-placement="top" href="https://www.wilson.com/fr-fr/football/footballs/nfl/nfl-duke/the-duke-nfl-football" title="">
+ Ballon du match
+</a>
 
 	  <div class="row">
 		  <div class="full">
-	      <img src="<?= $player['p_full']?>" class="img-fluid">
+	      <img src="<?= $player['p_img_hover_l']?>" class="img-fluid">
 	    </div>
     </div>
   </div>

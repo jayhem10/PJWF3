@@ -33,6 +33,9 @@ class PagesController {
        
         $player = Player::findOne($id);
 
+        // $player['s_id'] 
+        //création switch en fonction du id de sport appel à chaque header dans le model
+
 
         view('pages.player',compact('player'));
     }
