@@ -4,7 +4,7 @@
  * Nous allons utiliser des méthodes issues de Db, nous disons que Article
  * est une classe enfant, elle hérite de la classe Db 
  */
-class User extends Db {
+class Player extends Db {
 
     /**
      * Proprietés 
@@ -15,8 +15,8 @@ class User extends Db {
      * Constantes
      * Nous pouvons aussi définir des constantes. Ici, il s'agit du nom de la table. Ainsi, s'il venait à changer, nous n'aurons plus qu'à le changer à cet endroit.
      */
-    const TABLE_NAME = "user";
-    const PRIMARY_KEY = "usr_id";
+    const TABLE_NAME = "player";
+    const PRIMARY_KEY = "p_id";
 
     /**
      * Méthodes magiques
@@ -63,6 +63,19 @@ class User extends Db {
         $query = $bdd->prepare('SELECT *
                             FROM '. self::TABLE_NAME);
 
+    
+        $query->execute();
+
+        // je retourne la liste darticles
+        return $query->fetchAll(PDO::FETCH_ASSOC);       
+    }
+
+    public static function findTrois() {
+
+        $bdd = Db::getDb();
+
+        $query = $bdd->prepare('select * from '. self::TABLE_NAME.' order by p_id desc LIMIT 0,3');
+
         // je l'execute 
         $query->execute();
 
@@ -70,8 +83,9 @@ class User extends Db {
         return $query->fetchAll(PDO::FETCH_ASSOC);       
     }
 
+
 // ENVOI LES INFOS DE L'USER PAR SON ID SEULEMENT
-    public static function findOne(int $id) {
+    public static function findOne($id) {
 
         $bdd = Db::getDb();
 
@@ -83,8 +97,6 @@ class User extends Db {
         $query->execute([
             'id' => $id
         ]);
-
-        
 
         // je retourne la liste d'articles
         return $query->fetch(PDO::FETCH_ASSOC);
@@ -110,7 +122,6 @@ class User extends Db {
         return $query->fetchAll(PDO::FETCH_ASSOC);
 
     }
-    
 
         // ENVOI LES INFOS DE LA TABLE SPORT EN FONCTION DE L'ID User
         public static function nomSport() {
@@ -208,7 +219,14 @@ class User extends Db {
         
         }
 
+        //creation d'un nouvel utilisateur en BDD
 
+        public static function signin($data) {
+
+            $nouvelId = Db::dbCreate(self::TABLE_NAME, $data);
+    
+            return $nouvelId;
+        }
 
 
 

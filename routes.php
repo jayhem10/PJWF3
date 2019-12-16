@@ -26,6 +26,9 @@ $router->get('logout', 'PagesController@logout');
 // page utilisateur connecté : recupere ses infos pour les afficher
 $router->get('user', 'PagesController@user');
 
+// page player interactif
+$router->get('player/{id}', 'PagesController@player');
+
 // reception des données 
 $router->post('contact', 'PagesController@contact');
 
