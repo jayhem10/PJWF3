@@ -1,8 +1,5 @@
 <?php ob_start(); ?>
 
-
-
-
   <div class="container-fluid">
     <h1 class="bg-dark text-light text-center mb-5"><?= $player['p_prenom']?> <?= $player['p_nom']?> </h1>
     </div>
@@ -34,7 +31,7 @@
   <h2 class="col-12 col-md-6 my-auto text-center"><?= $player['p_club']?></h2> 
     </div>
     </div>
-
+    <a class="btn btn-warning" href="<?= url('allplayer') ?>" role="button"><i class="fas fa-angle-double-left"></i> Retour aux joueurs</a>
 
 
 

@@ -69,7 +69,7 @@ class Player extends Db {
         // je retourne la liste darticles
         return $query->fetchAll(PDO::FETCH_ASSOC);       
     }
-w
+
     public static function findTrois() {
 
         $bdd = Db::getDb();
