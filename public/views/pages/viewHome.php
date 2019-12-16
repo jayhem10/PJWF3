@@ -37,9 +37,9 @@
           </div>
         </div>
         <div class="carousel-item">
-          <img src="public/img/SRW_1.jpg" class="d-block w-100" alt="Third Slide">
+          <img src="public/img/TB_1.jpg" class="d-block w-100" alt="Third Slide">
           <div class="carousel-caption">
-            <h5 class="text-warning">SERENA WILLIAMS</h5>
+            <h5 class="text-info">TOM BRADY</h5>
             <p></p>
           </div>
         </div>
