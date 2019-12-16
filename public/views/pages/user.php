@@ -31,6 +31,7 @@
         
     </div>    
  
+    
     <a class="btn btn-warning center-block" href=" <?= url('allplayer')?>" role="button">Découvre les autres joueurs</a>
 
     
