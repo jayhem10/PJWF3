@@ -5,9 +5,8 @@
 //   });
 $('.stat').popover({ 
     boundary: 'window',
-    delay: { "show": 500, "hide": 4000 }
+    trigger: 'focus'
  });
-
  let states = [
   "Alabama",
   "Alaska",
