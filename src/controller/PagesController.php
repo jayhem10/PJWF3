@@ -23,12 +23,12 @@ class PagesController {
        
         $user = $_SESSION['user'];
         $joueur = Player::findTrois();
+        // $fil = User::findUserSport($id);
 
 
 
         view('pages.user',compact('user','joueur'));
     }
-
 
 
     

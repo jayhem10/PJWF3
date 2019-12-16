@@ -35,6 +35,7 @@
         
     </div>    
  
+    
     <a class="btn btn-warning center-block" href=" <?= url('allplayer')?>" role="button">Découvre les autres joueurs</a>
 
 </div>
@@ -47,16 +48,12 @@
 <div class="container">
   <div class="row">
 
-  
 
-    <div><a class="col twitter-timeline" href="https://twitter.com/TrashTalk_fr?ref_src=twsrc%5Etfw">Tweets by TrashTalk_fr</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
 
-    <div><a class="col twitter-timeline" href="https://twitter.com/NBAFRANCE?ref_src=twsrc%5Etfw">Tweets by NBAFRANCE</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
+    <div><?=$user['twitter_1']; ?><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
+    <div><?=$user['twitter_2']; ?><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
+    <div><?=$user['twitter_3']; ?><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
 
-    <div><a class="col twitter-timeline" href="https://twitter.com/NBAextra?ref_src=twsrc%5Etfw">Tweets by NBAextra</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
-
-    <div><a class="col twitter-timeline" href="https://twitter.com/FantasyLabsNBA?ref_src=twsrc%5Etfw">Tweets by FantasyLabsNBA</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
-    
   </div>
 </div>
 
