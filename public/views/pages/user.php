@@ -17,7 +17,7 @@
           <div class="card-deck py-3 col-lg-4">
 
             <div class="card">
-                <img class="card-img-top" style="width : 318px; height : 300px" src="<?= $joueurs['p_img']; ?>" alt="Card image cap">
+                <img class="card-img-top" style="width : 318px, height : 300px;" src="<?= $joueurs['p_img']; ?>" alt="Card image cap">
                 <div class="card-body">
                   <h5 class="card-title"><?= $joueurs['p_nom']?> <?= $joueurs['p_prenom']?> <img style ="width : 35px; float: right; margin-right: auto "  src="https://laendercode.net/img/flag-icon-css/flags/4x3/<?= $joueurs['code_pays'];?>.svg"/></h5>
                   <p class="card-text">Club actuel : <?= $joueurs['p_club']?><img style ="width : 35px; float: right; margin-right: auto "  src="<?= $joueurs['code_club'];?>"/></p>
