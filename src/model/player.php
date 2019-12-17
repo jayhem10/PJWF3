@@ -70,7 +70,7 @@ class Player extends Db {
         return $query->fetchAll(PDO::FETCH_ASSOC);       
     }
 
-    public static function findTrois() {
+    public static function findTrois($id) {
 
         $bdd = Db::getDb();
 
@@ -78,10 +78,13 @@ class Player extends Db {
                                 FROM user 
                                 INNER JOIN player 
                                 ON player.s_id = user.id_sport 
-                                LIMIT 3');
+                                WHERE usr_id = :id
+                                LIMIT 0,3');
 
         // je l'execute 
-        $query->execute();
+        $query->execute([
+            'id' => $id
+        ]);
 
         // je retourne la liste d'articles
         return $query->fetchAll(PDO::FETCH_ASSOC);       

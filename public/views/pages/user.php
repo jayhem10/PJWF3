@@ -1,7 +1,7 @@
 <?php ob_start(); ?>
 
 <?php // var_dump($user)?>
-<div class="view" style="background-image:url(<?= $user['img_sport']; ?>)">
+<div class="view" style="background-image:url(<?= $sport['img_sport']; ?>)">
 
 <div class="container">
 
@@ -12,22 +12,22 @@
   <div class="container">
     <div class="row">
 
-      <?php foreach( $joueur as $joueurs) : ?>
 
+    <?php foreach($player as $fav): ?>
           <div class="card-deck py-3 col-lg-4">
-
             <div class="card">
-                <img class="card-img-top" style="width : 318px height : 300px;" src="<?= $joueurs['p_img']; ?>" alt="Card image cap">
+                <img class="card-img-top" style="width : 318px; height : auto;" src="<?= $fav['p_img']; ?>" alt="Card image cap">
                 <div class="card-body">
-                  <h5 class="card-title"><?= $joueurs['p_nom']?> <?= $joueurs['p_prenom']?> <img style ="width : 35px; float: right; margin-right: auto "  src="https://laendercode.net/img/flag-icon-css/flags/4x3/<?= $joueurs['code_pays'];?>.svg"/></h5>
-                  <p class="card-text">Club actuel : <?= $joueurs['p_club']?><img style ="width : 35px; float: right; margin-right: auto "  src="<?= $joueurs['code_club'];?>"/></p>
-                  <p class="card-text">Né(e) le : <?= $joueurs['p_birth']?></p>
+                  <h5 class="card-title"><?= $fav['p_nom']?> <?= $fav['p_prenom']?> <img style ="width : 35px; float: right; margin-right: auto "  src="https://laendercode.net/img/flag-icon-css/flags/4x3/<?= $fav['code_pays'];?>.svg"/></h5>
+                  <p class="card-text">Club actuel : <?= $fav['p_club']?><img style ="width : 35px; float: right; margin-right: auto "  src="<?= $fav['code_club'];?>"/></p>
+                  <p class="card-text">Né(e) le : <?= $fav['p_birth']?></p>
                   <a class="btn btn-success" href="<?=url('player/'.$joueurs['p_id']);?>" role="button">Consulter sa fiche</a>
                 </div>
-              </div>    
+              </div>  
           </div>
+          <?php endforeach; ?>  
+   
 
-      <?php endforeach; ?>
         
     </div>    
  
@@ -48,9 +48,9 @@
 
 
 
-    <div><?=$user['twitter_1']; ?><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
-    <div><?=$user['twitter_2']; ?><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
-    <div><?=$user['twitter_3']; ?><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
+    <div><?=$sport['twitter_1']; ?><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
+    <div><?=$sport['twitter_2']; ?><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
+    <div><?=$sport['twitter_3']; ?><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
 
   </div>
 
