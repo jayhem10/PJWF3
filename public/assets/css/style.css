@@ -157,3 +157,7 @@ h2{
 	margin-left: 85% ;
 	margin-top: 45%;
 }
+.full {
+    max-width:100%;
+    height:auto;
+}

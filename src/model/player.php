@@ -74,7 +74,7 @@ class Player extends Db {
 
         $bdd = Db::getDb();
 
-        $query = $bdd->prepare('select * from '. self::TABLE_NAME.' order by p_id asc LIMIT 0,3');
+        $query = $bdd->prepare('select * from '. self::TABLE_NAME.' order by p_id desc LIMIT 0,3');
 
         // je l'execute 
         $query->execute();
@@ -119,9 +119,9 @@ class Player extends Db {
         ]);
 
         // je retourne la liste d'articles
-      $shopsport = $query->fetch(PDO::FETCH_ASSOC);
+       return  $query->fetch(PDO::FETCH_ASSOC);
         
-        return $shopsport;
+        
 
     }
 
@@ -166,8 +166,8 @@ class Player extends Db {
 
         $query = $bdd->prepare('SELECT * 
                             FROM '. self::TABLE_NAME .'
-                            INNER JOIN sport ON s_id = id_sport
-                            WHERE usr_id = :id');
+                            INNER JOIN sport ON player.s_id = sport.s_id
+                            WHERE p_id = :id');
 
         // je l'execute 
         $query->execute([
@@ -175,8 +175,8 @@ class Player extends Db {
         ]);
 
         // je retourne la liste d'articles
-        return $query->fetchAll(PDO::FETCH_ASSOC);
-
+        $sportshop = $query->fetch(PDO::FETCH_ASSOC);
+        return $sportshop;
     }
 
 
