@@ -152,10 +152,15 @@ h2{
 	margin-left: 5% ;
 	margin-top: 45%;
 }
-#shopperso {
+#insta {
 	position: absolute;
-	margin-left: 85% ;
-	margin-top: 45%;
+	margin-left: 78% ;
+	margin-top: 75%;
+}
+#twitter {
+	position: absolute;
+	margin-left: 78% ;
+	margin-top: 90%;
 }
 .full {
     max-width:100%;

@@ -16,8 +16,13 @@
 
 
     <a tabindex="0" id="funfact" class="stat btn btn-dark" role="button" data-toggle="popover" data-trigger="focus" data-placement="bottom" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?">Funfact</a>
+    
+    
+    <div class="col-md-6 col-lg-6 text-center mx-auto my-2">
+    <a href="<?= $player['insta']?>" target="_blank" id="insta" class="stat btn btn-dark"><i class="fab fa-instagram display-4"></i></a>
+    <a href="<?= $player['twitter']?>" target="_blank" id="twitter" class="stat btn btn-dark"><i class="fab fa-twitter-square display-4"></i></a>
+    </div>
 
-    <a tabindex="0" id="shopperso" class="stat btn btn-dark" role="button" data-toggle="popover" data-trigger="focus" data-placement="bottom" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?">Shop perso</a>
 
     <div class="row">
           <div class="full mx-auto">
