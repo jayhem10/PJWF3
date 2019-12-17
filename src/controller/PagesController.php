@@ -24,7 +24,7 @@ class PagesController {
         $user = $_SESSION['user'];
         $joueur = Player::findTrois();
         // $fil = User::findUserSport($id);
-        var_dump($user);
+        
 
 
 
