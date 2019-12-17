@@ -27,6 +27,13 @@
 </div>
   
 
+  <div class="container-fluid  bg-dark text-light block-center my-5">
+  <div class="row">
+  <img src="<?= $player['code_club']?>" class="col-12 col-md-6 mx-auto" style="max-width: 30%; height:auto;" alt="">
+  <h2 class="col-12 col-md-6 my-auto text-center"><?= $player['p_club']?></h2> 
+    </div>
+    </div>
+    <a class="btn btn-warning" href="<?= url('allplayer') ?>" role="button"><i class="fas fa-angle-double-left"></i> Retour aux joueurs</a>
 
 
 

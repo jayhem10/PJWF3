@@ -23,6 +23,7 @@ class PagesController {
        
         $user = $_SESSION['user'];
         $joueur = Player::findTrois();
+        // $fil = User::findUserSport($id);
 
 
 
@@ -45,7 +46,6 @@ class PagesController {
 
         view('pages.allplayer',compact('players'));
     }
-
 
     
 //Formulaire de contact de l'utilisateur + envoi message en BDD

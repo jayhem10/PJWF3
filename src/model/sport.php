@@ -4,7 +4,7 @@
  * Nous allons utiliser des méthodes issues de Db, nous disons que Article
  * est une classe enfant, elle hérite de la classe Db 
  */
-class Player extends Db {
+class Sport extends Db {
 
     /**
      * Proprietés 
@@ -15,8 +15,8 @@ class Player extends Db {
      * Constantes
      * Nous pouvons aussi définir des constantes. Ici, il s'agit du nom de la table. Ainsi, s'il venait à changer, nous n'aurons plus qu'à le changer à cet endroit.
      */
-    const TABLE_NAME = "player";
-    const PRIMARY_KEY = "p_id";
+    const TABLE_NAME = "sport";
+    const PRIMARY_KEY = "s_id";
 
     /**
      * Méthodes magiques
@@ -74,7 +74,7 @@ class Player extends Db {
 
         $bdd = Db::getDb();
 
-        $query = $bdd->prepare('select * from '. self::TABLE_NAME.' order by p_id asc LIMIT 0,3');
+        $query = $bdd->prepare('select * from '. self::TABLE_NAME.' order by p_id  LIMIT 0,3');
 
         // je l'execute 
         $query->execute();
@@ -119,9 +119,7 @@ class Player extends Db {
         ]);
 
         // je retourne la liste d'articles
-      $shopsport = $query->fetch(PDO::FETCH_ASSOC);
-        
-        return $shopsport;
+        return $query->fetchAll(PDO::FETCH_ASSOC);
 
     }
 
@@ -165,9 +163,9 @@ class Player extends Db {
         $bdd = Db::getDb();
 
         $query = $bdd->prepare('SELECT * 
-                            FROM '. self::TABLE_NAME .'
-                            INNER JOIN sport ON s_id = id_sport
-                            WHERE usr_id = :id');
+        FROM sport
+        INNER JOIN user ON id_sport = s_id
+        WHERE s_id = :id');
 
         // je l'execute 
         $query->execute([

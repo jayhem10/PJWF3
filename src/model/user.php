@@ -156,6 +156,8 @@ class User extends Db {
                             INNER JOIN sport ON s_id = id_sport
                             WHERE usr_id = :id');
 
+    
+
         // je l'execute 
         $query->execute([
             'id' => $id
