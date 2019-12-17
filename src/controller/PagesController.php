@@ -30,13 +30,6 @@ class PagesController {
         view('pages.user',compact('user', 'player','sport'));
     }
 
-    public function player($id) {
-       
-        $player = Player::findOne($id);
-
-
-        view('pages.player',compact('player'));
-    }
 
     public function allplayer() {
        

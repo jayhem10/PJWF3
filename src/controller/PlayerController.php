@@ -7,13 +7,26 @@
             $player = Player::findOne($id);
            
             $shopsport = Player::findUserSport($id);
-           
-            $player['api_info']
-            $info = Api::basket($player['api_info']);
-    
-            var_dump($info);
 
-            view('pages.player',compact('player','shopsport'));
+            $i= $player['s_id'];
+
+            if ($i == 1) {
+                $info = Api::basket($player['p_api']);
+            } elseif ($i == 2) {
+                $info = Api::football($player['p_api']);
+            } elseif ($i == 3) {
+                $info = Api::nhl($player['p_api']);
+            } elseif ($i == 4) {
+                $info = Api::nfl($player['p_api']);
+            }
+
+
+           
+            
+    
+            
+
+            view('pages.player',compact('player','shopsport','info'));
         }
     
         public function allplayer() {
