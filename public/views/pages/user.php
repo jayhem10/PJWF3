@@ -21,7 +21,7 @@
                   <h5 class="card-title"><?= $fav['p_nom']?> <?= $fav['p_prenom']?> <img style ="width : 35px; float: right; margin-right: auto "  src="https://laendercode.net/img/flag-icon-css/flags/4x3/<?= $fav['code_pays'];?>.svg"/></h5>
                   <p class="card-text">Club actuel : <?= $fav['p_club']?><img style ="width : 35px; float: right; margin-right: auto "  src="<?= $fav['code_club'];?>"/></p>
                   <p class="card-text">Né(e) le : <?= $fav['p_birth']?></p>
-                  <a class="btn btn-success" href="<?=url('player/'.$joueurs['p_id']);?>" role="button">Consulter sa fiche</a>
+                  <a class="btn btn-success" href="<?=url('player/'.$fav['p_id']);?>" role="button">Consulter sa fiche</a>
                 </div>
               </div>  
           </div>

@@ -8,7 +8,11 @@
            
             $shopsport = Player::findUserSport($id);
            
+            $player['api_info']
+            $info = Api::basket($player['api_info']);
     
+            var_dump($info);
+
             view('pages.player',compact('player','shopsport'));
         }
     
