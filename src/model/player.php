@@ -119,7 +119,9 @@ class Player extends Db {
         ]);
 
         // je retourne la liste d'articles
-        return $query->fetchAll(PDO::FETCH_ASSOC);
+      $shopsport = $query->fetch(PDO::FETCH_ASSOC);
+        
+        return $shopsport;
 
     }
 

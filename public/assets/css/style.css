@@ -53,6 +53,7 @@ h2{
 
 
 
+
 /* IMAGE DE LA PAGE D'ACCUEIL HOVER + FILTRE + TITRE STYLE */
 		.hover{
 			position: relative;
@@ -138,7 +139,7 @@ h2{
 }
 #shop1 {
 	position: absolute;
-	margin-left: -5% ;
+	margin-left: 5% ;
 	margin-top: 5%;
 }
 #stat {
@@ -148,7 +149,7 @@ h2{
 }
 #funfact {
 	position: absolute;
-	margin-left: -5% ;
+	margin-left: 5% ;
 	margin-top: 45%;
 }
 #shopperso {
