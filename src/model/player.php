@@ -74,7 +74,11 @@ class Player extends Db {
 
         $bdd = Db::getDb();
 
-        $query = $bdd->prepare('select * from '. self::TABLE_NAME.' order by p_id desc LIMIT 0,3');
+        $query = $bdd->prepare('SELECT * 
+                                FROM user 
+                                INNER JOIN player 
+                                ON player.s_id = user.id_sport 
+                                LIMIT 3');
 
         // je l'execute 
         $query->execute();
@@ -160,6 +164,7 @@ class Player extends Db {
         }
     
     // ENVOI L'UTILISATEUR PAR ID ET LA TABLE SPORT EN RELATION
+
     public static function findUserSport(int $id) {
 
         $bdd = Db::getDb();
@@ -178,7 +183,6 @@ class Player extends Db {
         $sportshop = $query->fetch(PDO::FETCH_ASSOC);
         return $sportshop;
     }
-
 
     //CONNEXION A SON ESPACE
     public static function connect($email, $password) {
