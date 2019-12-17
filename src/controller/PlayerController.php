@@ -5,9 +5,10 @@
         public function player($id) {
        
             $player = Player::findOne($id);
-    
-    
-            view('pages.player',compact('player'));
+            $shopsport = Player::findUserSport($id);
+
+
+            view('pages.player',compact('player','shopsport'));
         }
     
         public function allplayer() {

@@ -2,7 +2,6 @@
 
 
 
-
   <div class="container">
     
     <h1><?= $player['p_prenom']?> <?= $player['p_nom']?> </h1>
