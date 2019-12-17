@@ -164,7 +164,7 @@ class User extends Db {
         ]);
 
         // je retourne la liste d'articles
-        return $query->fetchAll(PDO::FETCH_ASSOC);
+        return $query->fetch(PDO::FETCH_ASSOC);
 
     }
 
@@ -177,7 +177,6 @@ class User extends Db {
             // je verifie si l'e-mail est présent en BDD 
             $query = $bdd->prepare('SELECT * 
                                     FROM '. self::TABLE_NAME .'
-                                    INNER JOIN sport ON id_sport = s_id
                                     WHERE usr_email = ?');
         
             // j'execute ma requete 
@@ -199,22 +198,16 @@ class User extends Db {
                     unset($user['usr_password']);
                     // je stock les infos user dans une variable de session 
                     $_SESSION['user'] = $user;
-                    redirectTo('user');    
-            
+                    return $user;
+    
                 }
                 else {
                     // je retourne false si le password est incorect 
                     $errors = false;
+                    return $errors;
                 }
             }
         
-        }
-
-
-
-
-
-
-        
+        }   
  
 } 
