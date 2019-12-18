@@ -1,6 +1,6 @@
 <?php ob_start(); ?>
 
-<?php // var_dump($user)?>
+
 <div class="view" style="background-image:url(<?= $sport['img_sport']; ?>)">
 
 <div class="container">

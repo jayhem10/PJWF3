@@ -1,5 +1,7 @@
 <?php ob_start(); ?>
 
+<?php if (isset($_SESSION['user'])): ?>
+
 <div class="container-fluid">
     <h1 class="bg-dark text-light text-center mb-5"><?= $player['p_prenom']?> <?= $player['p_nom']?> </h1>
     </div>
@@ -39,6 +41,16 @@
     </div>
     </div>
     <a class="btn btn-warning" href="<?= url('allplayer') ?>" role="button"><i class="fas fa-angle-double-left"></i> Retour aux joueurs</a>
+
+
+  <?php else: ?>
+
+      <div class="text-center titre2 my-2">
+      <h2 class="text-light py-5 "> INSCRIS-TOI ET SUIS TES JOUEURS FAVORIS</h2>
+      <a class="btn btn-warning btn-lg  my-5" href="<?= url('signin') ?>" role="button">M'inscrire</a>
+      </div>
+
+<?php endif; ?>
 
 
 <?php $content = ob_get_clean() ?> <?php view('template', compact('content')); ?>

@@ -15,7 +15,7 @@
 <div class="container-fluid bg-light">
 
 
-  <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+  <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#carouselExampleCaptions" data-slide-to="0" id="ball1" class="active"></li>
         <li data-target="#carouselExampleCaptions" data-slide-to="1" id="ball1"></li>
@@ -23,24 +23,30 @@
       </ol>
       <div class="carousel-inner" role="listbox">
         <div class="carousel-item active">
+          <div class="view">
           <img src="public/img/LBJ_1.jpg" class="d-block w-100" alt="First Slide">
+          <div class="mask rgba-black-light"></div>
+          </div>
           <div class="carousel-caption">
             <h5 class="text-light">LEBRON JAMES</h5>
-            <p></p>
           </div>
         </div>
         <div class="carousel-item">
+        <div class="view">
           <img src="public/img/CR7_0.jpg" class="d-block w-100" alt="Second Slide">
+          <div class="mask rgba-black-strong"></div>
+          </div>
           <div class="carousel-caption">
             <h5 class="text-primary">CRISTIANO RONALDO</h5>
-            <p></p>
+            </div>
           </div>
-        </div>
         <div class="carousel-item">
+        <div class="view">
           <img src="public/img/TB_1.jpg" class="d-block w-100" alt="Third Slide">
+          <div class="mask rgba-black-light"></div>
+          </div>
           <div class="carousel-caption">
             <h5 class="text-info">TOM BRADY</h5>
-            <p></p>
           </div>
         </div>
       </div>
