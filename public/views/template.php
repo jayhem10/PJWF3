@@ -14,7 +14,7 @@
 
      <link href="<?= css_url('style.css'); ?>" rel="stylesheet">
 
-
+<!--------------------------------------------------- HEADER --------------------------------------------------->
 <header>
   <body>
       <nav class="navbar navbar-expand-sm bg-light navbar-light" >
@@ -32,6 +32,8 @@
             <li class="nav-item">
               <a href="<?= url('contact') ?>" class="nav-link">Contact</a>
             </li>
+
+            <!-- Si user connecté, affiche les liens suivants -->
             <?php if (isset($_SESSION['user'])): ?>
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?= url('user') ?>">Mon arène</a>
@@ -54,6 +56,8 @@
       </nav>
   </header>
 
+  <!--------------------------------------------------- CONTENU DES PAGES --------------------------------------------------->
+
 
         <?php
             // contenu de la page
@@ -61,7 +65,7 @@
         ?>
 
 
-<!-- Footer -->
+<!--------------------------------------------------- FOOTER --------------------------------------------------->
 <footer class="page-footer font-small mdb-color lighten-3 pt-4">
 
   <!-- Footer Links -->

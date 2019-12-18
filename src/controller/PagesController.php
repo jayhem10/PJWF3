@@ -12,6 +12,7 @@ class PagesController {
         view('pages.home');
     }
 
+    //appelle la page about Us
     public function about() {
 
         // Exemple pour appeler mon objet User et une requête SQL
@@ -19,6 +20,8 @@ class PagesController {
         view('pages.aboutus');
     }
 
+
+    //applique les fonctions sur la page user
     public function user() {
        
         $user = $_SESSION['user'];
@@ -30,7 +33,7 @@ class PagesController {
         view('pages.user',compact('user', 'player','sport'));
     }
 
-
+    //Récupère tous les joueurs
     public function allplayer() {
        
         $players = Player::findAll();
@@ -89,7 +92,7 @@ class PagesController {
         view('pages.contact', compact('formulaireHtml', 'errors', 'formValid'));
     }
 
-    //FONCTOIN LOGIN
+    //FONCTION LOGIN
 
     public function login() {
 
@@ -129,7 +132,7 @@ class PagesController {
         view('pages.login', compact('formulaireHtml', 'errors', 'formValid'));
     }
 
-    //FONCTION INSCRIRE SUR LE SITE
+    //FONCTION S'INSCRIRE SUR LE SITE
 
     public function signin() {
 

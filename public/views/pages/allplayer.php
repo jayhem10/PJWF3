@@ -1,5 +1,7 @@
 <?php ob_start(); ?>
 
+
+<!-- Si l'utilisateur à une session ouverte, on affiche la liste de tous les joueurs... -->
 <?php if (isset($_SESSION['user'])): ?>
 
         <div class="container my-5">
@@ -15,6 +17,7 @@
 </div>
 </div>
 
+<!-- ...sinon on affiche le lien d'inscription sur le site car fonctionnalité seulement reservée aux inscrits -->
 
 <?php else: ?>
 
