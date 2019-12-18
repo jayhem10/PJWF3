@@ -15,7 +15,7 @@
     <a tabindex="0" id="stat" class="stat btn btn-dark" role="button" data-toggle="popover" data-trigger="focus" data-placement="bottom" title="Saison 2019/2020" data-content="<?=$info?>">Statistiques</a>
 
 
-    <a tabindex="0" id="funfact" class="stat btn btn-dark" role="button" data-toggle="popover" data-trigger="focus" data-placement="bottom" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?">Funfact</a>
+    <a tabindex="0" id="funfact" class="stat btn btn-dark" role="button" data-toggle="popover" data-trigger="focus" data-placement="bottom" title="" data-content="<?= $player['Funfact']?>">Funfact</a>
     
     
     <div class="col-md-6 col-lg-6 text-center mx-auto my-2">

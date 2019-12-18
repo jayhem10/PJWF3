@@ -135,23 +135,35 @@ $html.= '</ul>';
 public static function nhl($player_id){
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    $curl = curl_init();
+    curl_setopt_array($curl, array(
+     CURLOPT_URL => "https://api.sportsdata.io/v3/nhl/stats/json/PlayerSeasonStatsByPlayer/2020/".$player_id,
+     CURLOPT_SSL_VERIFYPEER => false,
+     CURLOPT_RETURNTRANSFER => true,
+     CURLOPT_ENCODING => "",
+     CURLOPT_MAXREDIRS => 10,
+     CURLOPT_TIMEOUT => 30,
+     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+     CURLOPT_CUSTOMREQUEST => "GET",
+     CURLOPT_HTTPHEADER => array(
+       "Ocp-Apim-Subscription-Key: 
+       890e66cd82884a62a899a4f681ef31db",
+       "Accept: /",
+       "Accept-Encoding: gzip, deflate",
+       "Cache-Control: no-cache",
+       "Connection: keep-alive",
+       "Host: api.sportsdata.io",
+       "Postman-Token: 392c67fb-e6f0-4389-b05e-6927f52be4b5,41206c5f-f2ac-4676-b119-8fc3137eebbe",
+       "User-Agent: PostmanRuntime/7.19.0",
+       "cache-control: no-cache"
+     ),
+    ));
+    $response = curl_exec($curl);
+    $err = curl_error($curl);
+    curl_close($curl);
+    $datas = json_decode($response, true);
+    // echo '<pre>';
+    // var_dump($datas);
 
 
 
@@ -159,15 +171,15 @@ public static function nhl($player_id){
 
     $html= '<ul>';
 
-    $html.='<li> Match joué : ' .$datas[0]['Played'].'</li>';
+    $html.='<li> Match joué : ' .$datas['Games'].'</li>';
     
-    $html.='<li> Nombre de Yards : ' .$datas[0]['PassingYards'].'</li>';
+    $html.='<li> Pourcentage de buts/tirs : ' .$datas['Goals'].'</li>';
     
-    $html.='<li> Pourcentage de passes complètes : ' .$datas[0]['PassingRating']. '</li>';
+    $html.='<li> Nombre d\'Assists : ' .$datas['Assists']. '</li>';
 
-    $html.='<li> Interception aux lancers : ' .$datas[0]['WindSpeed']. '</li>';
+    $html.='<li> Buts en cage vide : ' .$datas['EmptyNetGoals']. '</li>';
 
-    $html.='<li> Yards gagnés par passe : ' .$datas[0]['PassingYardsPerAttempt']. '</li>';
+    $html.='<li> Plus-Minus : ' .$datas['PlusMinus']. '</li>';
         
     $html.= '</ul>';
 
