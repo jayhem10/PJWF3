@@ -17,9 +17,9 @@
 
   <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
-        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="0" id="ball1" class="active"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="1" id="ball1"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="2" id="ball1"></li>
       </ol>
       <div class="carousel-inner" role="listbox">
         <div class="carousel-item active">
