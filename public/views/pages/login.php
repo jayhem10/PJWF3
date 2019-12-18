@@ -5,7 +5,7 @@
 
     <?= $errors; ?>
 
-    <br><h4>Accède à toutes les infos sur tes sportifs préférés</h4><br>
+    <br><h4>Connecte toi pour accéder à toutes les infos sur tes sportifs préférés</h4><br>
     <?= $formulaireHtml; ?>
 
 </div>
