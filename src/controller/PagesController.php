@@ -9,7 +9,7 @@ class PagesController {
 
         // données à récuperer de mon model 
 
-        view('pages.viewHome');
+        view('pages.home');
     }
 
     public function about() {
