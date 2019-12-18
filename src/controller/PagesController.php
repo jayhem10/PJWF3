@@ -118,7 +118,7 @@ class PagesController {
                 redirectTo('user');
             }else {
                                                
-                //$errors = alert('Identifiants incorrects');
+                $errors = alert('Identifiants incorrects');
             }
 
         } else {
