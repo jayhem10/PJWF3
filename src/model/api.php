@@ -56,7 +56,7 @@ $html= '<ul>';
 
 $html.='<li>';
 
-$html.= 'Match joué : ' .$datas['Games'].'.';
+$html.= 'Match joué : ' .$datas['Games'].'';
 
 $html.='</li>';
 

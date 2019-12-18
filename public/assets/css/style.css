@@ -18,17 +18,19 @@ ul li{
 	font-size: 1.2em;
 }
 
+
 .active{
 	flex-direction: end;
 }
 
-
+/* LOGO */
 .navbar-brand{
 	font-family: 'Mansalva', cursive;
 	font-size: 2em;
 	color: white;
 }
 	
+/* CAROUSEL */
 .carousel-inner{
   width:100%;
   max-height: 100vh; 
@@ -43,7 +45,7 @@ h1{
 
 h2{
 	font-family: 'Questrial', cursive;
-	font-size: 2em;
+	font-size: 3em;
 	font-weight: bold;
 }
 

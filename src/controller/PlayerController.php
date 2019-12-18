@@ -21,9 +21,7 @@
             }
 
 
-           
-            
-    
+        
             
 
             view('pages.player',compact('player','shopsport','info'));
