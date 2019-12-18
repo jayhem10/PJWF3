@@ -36,7 +36,7 @@
     <!-- Team Member 3 -->
     <div class="col-xl-4 col-md-6 mb-4">
       <div class="card border-0 shadow">
-        <img src="https://source.unsplash.com/sNut2MqSmds/500x350" style="width : 350px; height : 350px;" class="card-img-top" alt="...">
+        <img src="https://cdn.discordapp.com/attachments/633638511706243083/656796359067697162/image0.jpg" style="width : 350px; height : 350px;" class="card-img-top" alt="...">
         <div class="card-body text-center">
           <h5 class="card-title mb-0">Team Member</h5>
           <div class="card-text text-black-50">Web Developer</div>
