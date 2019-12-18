@@ -8,9 +8,9 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-12">
+        <div class="col-12 ">
 
-
+    
     <a tabindex="0" id="shop1" target="_blank" class="stat btn btn-dark" role="button" data-toggle="popover"  data-placement="bottom" data-trigger="focus" href="<?= $shopsport['lienshop']?>">Accessoires de match</a>
 
 
