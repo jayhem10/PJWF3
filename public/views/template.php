@@ -74,9 +74,9 @@
       <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
 
         <!-- Content -->
-        <h5 class="font-weight-bold text-uppercase mb-4">Depuis 2001</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit amet numquam iure provident voluptate
-          esse quasi, veritatis totam voluptas nostrum.</p>
+        <h5 class="font-weight-bold text-uppercase mb-4">Depuis toujours</h5>
+        <p>Fan de sports depuis notre plus jeune âge nous avons décidé de concrétiser notre passion autour de ce site. On espère qu'il te plaira! </br>
+        Enjoy! </p>
 
       </div>
       <!-- Grid column -->
@@ -90,6 +90,12 @@
         <h5 class="font-weight-bold text-uppercase mb-4">About</h5>
 
         <ul class="list-unstyled">
+        <style type="text/css">
+          a:link
+          {
+          text-decoration:none;
+          }
+          </style>
           <li>
             <p>
               <a href="#!">Nos sponsors</a>
@@ -123,11 +129,12 @@
         <ul class="list-unstyled">
           <li>
             <p>
-              <i class="fas fa-home mr-3"></i>5 rue Louis Loucheur</p>
+              <i class="fas fa-home mr-3"></i>30 rue Louis Loucheur 69007 LYON
+              </p>
           </li>
           <li>
             <p>
-              <i class="fas fa-envelope mr-3"></i> etg@gmail.com</p>
+              <i class="fas fa-envelope mr-3"></i> bethenext@gmail.com</p>
           </li>
           <li>
             <p>
@@ -135,7 +142,7 @@
           </li>
           <li>
             <p>
-              <i class="fas fa-print mr-3"></i> + 04 74 52 88 74</p>
+              <i class="fas fa-print mr-3"></i>  04 74 52 88 74</p>
           </li>
         </ul>
 
