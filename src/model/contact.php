@@ -31,6 +31,8 @@ class Contact extends Db {
      /**
      * CRUD Methods
      */
+
+     //fonction pour créer un nouvel utilisateur
     public static function save($data) {
 
         $nouvelId = Db::dbCreate(self::TABLE_NAME, $data);
@@ -38,6 +40,7 @@ class Contact extends Db {
         return $nouvelId;
     }
 
+    
     public static function update($data, $id) {
 
         Db::dbUpdate(self::TABLE_NAME, 

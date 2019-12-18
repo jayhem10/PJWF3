@@ -1,7 +1,7 @@
 <?php 
     class PlayerController {
 
-
+        //appelle les fonctions à utiliser sur la page player
         public function player($id) {
        
             $player = Player::findOne($id);
@@ -10,6 +10,8 @@
 
             $i= $player['s_id'];
 
+
+            //Si le s_id du joueur est egal à 1,2,3 ou 4 alors on utilisera l'API possedant le même id 
             if ($i == 1) {
                 $info = Api::basket($player['p_api']);
             } elseif ($i == 2) {
@@ -35,21 +37,6 @@
             view('pages.allplayer',compact('players'));
         }
 
-        // public function getPlayerByName($nom){
-    
-        //     $db = getDb();
-        
-        //     $query = $db->prepare('SELECT p_nom 
-        //                             FROM player 
-        //                             WHERE p_nom LIKE :nomPlayer ');
-        
-        //     $query->execute([
-        //         'nomPlayer' => '%'.$nom.'%'
-        //     ]);
-        
-        //     $playersearch = $query->fetchAll(PDO::FETCH_ASSOC);
-        
-        //     return $playersearch;
-        // }
+
 
     }

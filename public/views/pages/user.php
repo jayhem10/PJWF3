@@ -11,7 +11,7 @@
   <div class="container">
     <div class="row">
 
-
+<!-- affichage des sportifs sur des cartes -->
     <?php foreach($player as $fav): ?>
           <div class="card-deck py-3 col-lg-4">
             <div class="card">

@@ -26,6 +26,8 @@
   </div>
 </div>
 
+<!-- Si connecté, alors on affiche le boutton pour acceder à la page user, sinon lien inscription -->
+
 <?php if (isset($_SESSION['user'])): ?>
 <div class="text-center titre2 my-2">
 <h2 style="font-size:4vw;" class="text-warning py-5 "> TU FAIS PARTIE DE LA COMMUNAUTE !</h2>

@@ -1,9 +1,6 @@
 <?php
+//Appel des API
 
-/**
- * Nous allons utiliser des méthodes issues de Db, nous disons que Article
- * est une classe enfant, elle hérite de la classe Db 
- */
 class Api {
 
 
@@ -162,8 +159,6 @@ public static function nhl($player_id){
     $err = curl_error($curl);
     curl_close($curl);
     $datas = json_decode($response, true);
-    // echo '<pre>';
-    // var_dump($datas);
 
 
 
