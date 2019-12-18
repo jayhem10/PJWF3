@@ -53,7 +53,7 @@ $html= '<ul>';
 
 $html.='<li>';
 
-$html.= 'Match joué : ' .$datas['Games'].'';
+$html.= 'Matchs joués : ' .$datas['Games'].'';
 
 $html.='</li>';
 
@@ -112,7 +112,7 @@ $html.= '</ul>';
 
         $html= '<ul>';
 
-        $html.='<li> Match joué : ' .$datas[0]['Played'].'</li>';
+        $html.='<li> Matchs joués : ' .$datas[0]['Played'].'</li>';
         
         $html.='<li> Nombre de Yards : ' .$datas[0]['PassingYards'].'</li>';
         
@@ -166,7 +166,7 @@ public static function nhl($player_id){
 
     $html= '<ul>';
 
-    $html.='<li> Match joué : ' .$datas['Games'].'</li>';
+    $html.='<li> Matchs joués : ' .$datas['Games'].'</li>';
     
     $html.='<li> Pourcentage de buts/tirs : ' .$datas['Goals'].'</li>';
     
@@ -213,7 +213,7 @@ public static function football($player_id){
 
         $html= '<ul>';
 
-        $html.='<li> Matchs joué : ' .$datas[0]->player_match_played.'</li>';
+        $html.='<li> Matchs joués : ' .$datas[0]->player_match_played.'</li>';
         
         $html.='<li> Nombre de buts : ' .$datas[0]->player_goals.'</li>';
         

@@ -43,7 +43,7 @@
 
         <a tabindex="0"  class="my-auto  d-lg-none d-xl-none stat btn btn-dark" role="button" data-toggle="popover" data-trigger="focus" data-html="true" data-placement="bottom" title="" data-content="<?= $player['Funfact']?>">Fun Fact</a>
         
-        <a href="<?= $player['insta']?>" target="_blank"  class="pl-3 d-lg-none d-xl-none stat btn btn-dark"><i class="fab fa-instagram display-4"></i></a>
+        <a href="<?= $player['insta']?>" target="_blank"  class="pl-5 d-lg-none d-xl-none stat btn btn-dark"><i class="fab fa-instagram display-4"></i></a>
         <a href="<?= $player['twitter']?>" target="_blank" class="d-lg-none d-xl-none stat btn btn-dark"><i class="fab fa-twitter-square display-4"></i></a>
     </div>
   </div>
