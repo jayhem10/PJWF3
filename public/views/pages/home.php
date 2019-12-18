@@ -60,10 +60,18 @@
       </a>
   </div>
 </div>
-
+<?php if (isset($_SESSION['user'])): ?>
 <div class="text-center titre2 my-2">
+<h2 style="font-size:4vw;" class="text-light py-5 "> TU FAIS PARTIE DE LA COMMUNAUTE !</h2>
+<a class="btn btn-warning btn-lg  my-5" href="<?= url('user') ?>" role="button">J'accède à mes joueurs !</a>
+</div>
+
+<?php else: ?>
+  <div class="text-center titre2 my-2">
 <h2 style="font-size:4vw;" class="text-light py-5 "> INSCRIS-TOI ET SUIS TES JOUEURS FAVORIS</h2>
 <a class="btn btn-warning btn-lg  my-5" href="<?= url('signin') ?>" role="button">Je m'inscris</a>
 </div>
+
+  <?php endif; ?>
 
 <?php $content = ob_get_clean() ?> <?php view('template', compact('content')); ?>
