@@ -111,7 +111,7 @@ h2{
 			width: 100%;
 			text-align: center;
 			font-family: 'Heebo', sans-serif;
-			text-shadow: 0.07em 0.07em 0.05em purple;
+			text-shadow: 0.07em 0.07em 0.05em rgb(95, 66, 95);
 			display: none;
 		}
 
