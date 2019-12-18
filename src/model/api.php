@@ -193,46 +193,45 @@ public static function nhl($player_id){
 
 public static function football($player_id){
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
+    
+    $curl_options = array(
+      CURLOPT_URL => "https://apiv2.apifootball.com/?action=get_players&player_name=".$player_id."&APIkey=68700e26ce030c88055cdd2a880607b43b1fa1934fe8cf9fa4195e8af0aa51e4",
+      CURLOPT_RETURNTRANSFER => true,
+      CURLOPT_HEADER => false,
+      CURLOPT_TIMEOUT => 30,
+      CURLOPT_CONNECTTIMEOUT => 5
+    );
     
     
 
-    // A MODIFIER EN FONCTION DES CLE ET VALEUR
-
-    $html= '<ul>';
-
-    $html.='<li> Match joué : ' .$datas[0]['Played'].'</li>';
     
-    $html.='<li> Nombre de Yards : ' .$datas[0]['PassingYards'].'</li>';
     
-    $html.='<li> Pourcentage de passes complètes : ' .$datas[0]['PassingRating']. '</li>';
+    $curl = curl_init();
+    curl_setopt_array( $curl, $curl_options );
+    $result = curl_exec( $curl );
+    
+    $datas = (array) json_decode($result);
 
-    $html.='<li> Interception aux lancers : ' .$datas[0]['WindSpeed']. '</li>';
 
-    $html.='<li> Yards gagnés par passe : ' .$datas[0]['PassingYardsPerAttempt']. '</li>';
+
+
+        $html= '<ul>';
+
+        $html.='<li> Matchs joué : ' .$datas[0]->player_match_played.'</li>';
         
-    $html.= '</ul>';
+        $html.='<li> Nombre de buts : ' .$datas[0]->player_goals.'</li>';
+        
+        $html.='<li> Cartons jaunes : ' .$datas[0]->player_yellow_cards.'</li>';
 
-    return $html;
+        $html.='<li> Cartons rouges : ' .$datas[0]->player_red_cards. '</li>';
+            
+        $html.= '</ul>';
 
-} 
+        return $html;
+
+
+
+    }
 
 }
