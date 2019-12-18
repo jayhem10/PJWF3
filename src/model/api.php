@@ -162,8 +162,6 @@ public static function nhl($player_id){
     $err = curl_error($curl);
     curl_close($curl);
     $datas = json_decode($response, true);
-    // echo '<pre>';
-    // var_dump($datas);
 
 
 
