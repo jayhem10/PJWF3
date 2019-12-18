@@ -1,7 +1,7 @@
 <?php ob_start(); ?>
 
 
-<div class="view" style="background-image:url(<?= $sport['img_sport']; ?>)">
+<div class="view"  id="hautpage" style="background-image:url(<?= $sport['img_sport']; ?>)">
 
 <div class="container">
 <h2 class="text-warning py-5" >Bienvenue dans ton arène <b><?= $user['usr_prenom']; ?></b>!</h2><br>
@@ -24,22 +24,14 @@
                 </div>
               </div>  
           </div>
-          <?php endforeach; ?>  
+    <?php endforeach; ?>  
    
-
-        
-      
- 
-    
     <a class="btn btn-warning mx-auto" href=" <?= url('allplayer')?>" role="button">Découvre les autres joueurs</a>
 
-    
-
 </div>
 </div>
 </div>
 </div>
-
 
 <h1 class="text-center py-3">Ton fil d'actualité</h1>
 <div class="container">
@@ -47,9 +39,13 @@
     <div class="col-lg-4"><?=$sport['twitter_1']; ?><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
     <div class="col-lg-4"><?=$sport['twitter_2']; ?><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
     <div class="col-lg-4"><?=$sport['twitter_3']; ?><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
-
   </div>
-
 </div>
 
+
+<div class="container">
+  <div class="row">
+    <a class="btn btn-warning mx-auto my-5" href="#hautpage" role="button">Retourne en haut de page</a>
+  </div>
+</div>
 <?php $content = ob_get_clean() ?> <?php view('template', compact('content')); ?>
