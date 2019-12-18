@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Be The Next</title>
+  <title>Be The Next One</title>
 </head>
   
     <meta charset="utf-8">
@@ -18,7 +18,7 @@
 <header>
   <body>
       <nav class="navbar navbar-expand-sm bg-light navbar-light" >
-        <a href="<?= url('') ?>" class="navbar-brand">Be The Next</a>
+        <a href="<?= url('') ?>" class="navbar-brand">Be The Next One</a>
 
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
           <span class="navbar-toggler-icon"></span>
