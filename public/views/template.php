@@ -75,7 +75,7 @@
 
         <!-- Content -->
         <h5 class="font-weight-bold text-uppercase mb-4">Depuis toujours</h5>
-        <p>Fan de sports depuis notre plus jeune âge nous avons décidé de concrétiser notre passion autour de ce site. On espère qu'il te plaira! </br>
+        <p id="depuistjs">Fan de sports depuis notre plus jeune âge nous avons décidé de concrétiser notre passion autour de ce site. On espère qu'il te plaira! </br>
         Enjoy! </p>
 
       </div>
@@ -91,10 +91,6 @@
 
         <ul class="list-unstyled">
         <style type="text/css">
-          a:link
-          {
-          text-decoration:none;
-          }
           </style>
           <li>
             <p>
@@ -158,13 +154,13 @@
         <h5 class="font-weight-bold text-uppercase mb-4">Suivez-nous</h5>
 
         <!-- Facebook -->
-            <a href="#"><i class="fab fa-facebook-square display-3"></i></a>
+        <a class="social" href="#"><i class="fab fa-facebook-square display-3"></i></a>
         <!-- Twitter -->
-        <a href="#"><i class="fab fa-twitter-square display-3"></i></a>
+        <a class="social" href="#"><i class="fab fa-twitter-square display-3"></i></a>
         <!-- Google +-->
-        <a href="#"><i class="fab fa-google-plus-square display-3"></i></a>
+        <a class="social" href="#"><i class="fab fa-google-plus-square display-3"></i></a>
         <!-- Instagram -->
-        <a href="#"><i class="fab fa-instagram display-3"></i></a>
+        <a class="social" href="#"><i class="fab fa-instagram display-3"></i></a>
 
       </div>
 

@@ -3,17 +3,17 @@
 <?php ob_start(); ?>
 
 <div class="hover">
-    <img src="public/img/index2.jpg" style="height:100vh width:100%" class="img-fluid" alt="Responsive image"><h2 class="titreindex">ENTER THE GAME</h2>
+    <img src="public/img/index2.jpg" style="width:100%" class="img-fluid" alt="Responsive image"><h2 style="font-size:5vw;" class="titreindex ">ENTER THE GAME</h2>
 </div>
 
 
 <div class="text-center titre2 ">
-<h2 class="py-5 text-light"> ENTRE DANS LE GAME POUR SUIVRE LES PLUS GRANDS SPORTIFS DE TON EPOQUE</h2>
+<h2  style="font-size:4vw;" class="py-5 text-light"> ENTRE DANS LE GAME POUR SUIVRE LES PLUS GRANDS SPORTIFS DE TON EPOQUE</h2>
 </div>
 
 <!-- LE CAROUSEL -->
 <div class="container-fluid bg-light">
-<div class="container">
+
 
   <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
@@ -54,11 +54,10 @@
       </a>
   </div>
 </div>
-</div>
 
 <div class="text-center titre2 my-2">
-<h2 class="text-light py-5 "> INSCRIS-TOI ET SUIS TES JOUEURS FAVORIS</h2>
-<a class="btn btn-warning btn-lg  my-5" href="<?= url('signin') ?>" role="button">M'inscrire</a>
+<h2 style="font-size:4vw;" class="text-light py-5 "> INSCRIS-TOI ET SUIS TES JOUEURS FAVORIS</h2>
+<a class="btn btn-warning btn-lg  my-5" href="<?= url('signin') ?>" role="button">Je m'inscris</a>
 </div>
 
 <?php $content = ob_get_clean() ?> <?php view('template', compact('content')); ?>
