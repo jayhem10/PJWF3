@@ -49,7 +49,7 @@ class Api {
         // echo '<pre>';
         // var_dump($datas);
 
-        $html = nom : 
+        $html = mettre une nom :
 
         return $datas;
 
