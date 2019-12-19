@@ -1,6 +1,6 @@
 <?php ob_start(); ?>
 
-<div class="container">
+<div class="contactmain mt-3 container">
 
 
 <h2>Contact</h2><br>
@@ -11,6 +11,7 @@
     <?= $errors; ?>
     <!-- formulaire -->
     <?= $formulaireHtml; ?>
+    </div>
 
 <?php else: ?>
 
@@ -18,6 +19,7 @@
 
 <?php endif; ?>
 
-</div> 
+
+
 
 <?php $content = ob_get_clean() ?> <?php view('template', compact('content')); ?>
