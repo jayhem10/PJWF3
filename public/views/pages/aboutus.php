@@ -45,7 +45,7 @@
     </div>
 
   <!-- /.row -->
-
+  </div>
 </div>
 <!-- /.container -->
 
