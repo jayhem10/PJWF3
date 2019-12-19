@@ -158,13 +158,13 @@
         <h5 class="font-weight-bold text-uppercase mb-4">Suivez-nous</h5>
 
         <!-- Facebook -->
-        <a class="social" href="#"><i class="fab fa-facebook-square display-3"></i></a>
+        <a class="social" href="<?= url('socialmedia')?>"><i class="fab fa-facebook-square display-3"></i></a>
         <!-- Twitter -->
-        <a class="social" href="#"><i class="fab fa-twitter-square display-3"></i></a>
+        <a class="social" href="<?= url('socialmedia')?>"><i class="fab fa-twitter-square display-3"></i></a>
         <!-- Pinterest-->
-        <a class="social" href="#"><i class="fab fa-pinterest-square display-3"></i></a>
+        <a class="social" href="<?= url('socialmedia')?>"><i class="fab fa-pinterest-square display-3"></i></a>
         <!-- Instagram -->
-        <a class="social" href="#"><i class="fab fa-instagram display-3"></i></a>
+        <a class="social" href="<?= url('socialmedia')?>"><i class="fab fa-instagram display-3"></i></a>
 
       </div>
 

@@ -12,6 +12,13 @@ class PagesController {
         view('pages.home');
     }
 
+    public function socialmedia() {
+
+        // données à récuperer de mon model 
+
+        view('pages.socialmedia');
+    }
+
     //appelle la page about Us
     public function about() {
 

@@ -12,6 +12,9 @@ $router->get('aboutus', 'PagesController@about');
 // example.com/contact
 $router->get('contact', 'PagesController@contact');
 
+// social media
+$router->get('socialmedia', 'PagesController@socialmedia');
+
 // Inscription utilisateur
 $router->get('signin', 'PagesController@signin');
 $router->post('signin', 'PagesController@signin');
