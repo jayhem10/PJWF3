@@ -1,6 +1,6 @@
 <?php ob_start(); ?>
 
-    <div class="container">
+    <div class="zoneform container">
     <?= $errors; ?>
     <br><h4>Inscris toi !</h4>
    <!-- formulaire -->

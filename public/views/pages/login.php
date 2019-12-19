@@ -1,7 +1,7 @@
 <?php ob_start(); ?>
   
    
-    <div class="container">
+<div class="zoneform container">
 
     <?= $errors; ?>
 
@@ -9,6 +9,7 @@
     <?= $formulaireHtml; ?>
 
 </div>
+
    
 
 
